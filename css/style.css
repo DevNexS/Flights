@@ -6,13 +6,13 @@ body {
 }
 .findform {
     position: absolute;
-    left: 426px;
+    left: 416px;
     padding-right: 60px;
     padding-left: 100px;
     padding-bottom: 100px;
     padding-top: 90px;
     top: 280px;
-    width: 850px;
+    width: 870px;
     background-color: #02122c;
 }
 .faq {
@@ -59,11 +59,17 @@ body {
 }
 .nokuriene {
     display: inline-block;
-    width: 100%;
     padding: .375rem .75rem;
     border: .0625rem solid #b2b2bf;
     background: #fff;
+    width: 210px;
     color: #111236;
+    left: 30px;
+    top: 65px;
+    height: 36px;
+    position: absolute;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
 }
 .aviasquare:active {
     background-color:  #0770e3;
@@ -237,4 +243,54 @@ h2 {
 
 .space {
     margin-bottom: 30px;
+}
+.switchbutton {
+    width: 50px;
+    height: 50px;
+    top: 65px;
+    position: absolute;
+    left: 265px;
+    padding: 0;
+    border: .0625rem solid #b2b2bf;
+    border-right: 0;
+    border-radius: 0;
+    outline: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+.wheretogo {
+    display: inline-block;
+    padding: .375rem .75rem;
+    border: .0625rem solid #b2b2bf;
+    background: #fff;
+    width: 200px;
+    color: #111236;
+    left: 315px;
+    top: 65px;
+    height: 36px;
+    position: absolute;
+}
+.datepick {
+    display: inline-block;
+    padding: .375rem .75rem;
+    border: .0625rem solid #b2b2bf;
+    background: #fff;
+    width: 130px;
+    color: #111236;
+    left: 540px;
+    top: 65px;
+    height: 50px;
+    position: absolute;
+}
+.backpick {
+    display: inline-block;
+    padding: .375rem .75rem;
+    border: .0625rem solid #b2b2bf;
+    background: #fff;
+    width: 130px;
+    color: #111236;
+    left: 669px;
+    top: 65px;
+    height: 50px;
+    position: absolute;
 }
