@@ -1,4 +1,4 @@
-# Flights
+# Ceļot prieks!
 1. Ceļojums.
 2. DP1-1.
 3. Dominiks Segals, Vladislavs Šušpanovs, Ilja Rimša.
