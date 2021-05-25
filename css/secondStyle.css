@@ -7,8 +7,11 @@ body {
 
 .header {
     margin-top: 0px;
-    height: 86px;
     background-color: white;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 106px;
 }
 
 input {
@@ -41,7 +44,7 @@ th{
 .footer {
     float: center;
     font: icon;
-    position:absolute;
+    position: inherit;
     bottom:0;
     background-color: #1C2848;
     color: #fff;
@@ -49,7 +52,7 @@ th{
 }
 
 .more {
-    margin-left: auto;
+    margin-left: 200px;
     margin-right: auto;
     justify-content: center;
     margin-right: 40px;
