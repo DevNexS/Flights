@@ -1,13 +1,284 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
 
+<head>
+    <title>Flight-Panel</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--== FAV ICON ==-->
+    <link rel="shortcut icon" href="images/fav.ico">
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Quicksand:300,400,500" rel="stylesheet">
+
+    <!-- FONT-AWESOME ICON CSS -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/2a9941146c.js" crossorigin="anonymous"></script>
+
+    <!--== ALL CSS FILES ==-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mob.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/materialize.css" />
+
+    <script src="js/some.js"></script>
+    <script src="js/some.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<!--== MAIN CONTRAINER ==-->
+<div class="container-fluid sb1">
+    <div class="row">
+        <!--== LOGO ==-->
+        <div class="col-md-2 col-sm-3 col-xs-6 sb1-1">
+            <a href="index.html" class="logo"><img src="images/logo1.png" alt="" />
+            </a>
+        </div>
+        <!--== SEARCH ==-->
+        <div class="col-md-6 col-sm-6 mob-hide">
+            <form class="app-search">
+                <input type="text" placeholder="Поиск..." class="form-control">
+                <a href=""><i class="fa fa-search"></i></a>
+            </form>
+        </div>
+        <!--== MY ACCCOUNT ==-->
+        <div class="col-md-2 col-sm-3 col-xs-6">
+            <!-- Dropdown Trigger -->
+            <a class='waves-effect dropdown-button top-user-pro' href='#' data-activates='top-menu'>Выход<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</div>
+
+<!--== BODY CONTNAINER ==-->
+<div class="container-fluid sb2">
+    <div class="row">
+        <div class="sb2-1">
+            <!--== USER INFO ==-->
+            <div class="sb2-12">
+                <ul>
+                    <li><img src="images/icons/account_logo.jpeg" alt="">
+                    </li>
+                    <li>
+                        <h5>DevNex <span> Riga, LV</span></h5>
+                    </li>
+                    <li></li>
+                </ul>
+            </div>
+            <!--== LEFT MENU ==-->
+            <div class="sb2-13">
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li><a href="index.html" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Панель</a>
+                    </li>
+                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i> Пользователи</a>
+                        <div class="collapsible-body left-sub-menu">
+                            <ul>
+                                <li><a href="user-all.html">All Users</a>
+                                </li>
+                                <li><a href="user-add.html">Add New user</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-umbrella" aria-hidden="true"></i> Страны</a>
+                        <div class="collapsible-body left-sub-menu">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--== BODY CONTAINER ==-->
+        <div class="sb2-2">
+            <!--== breadcrumbs ==-->
+            <div class="sb2-2-2">
+                <ul>
+                    <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i> Главная</a>
+                    </li>
+                    <li class="active-bre"><a href="#"> Панель</a>
+                    </li>
+                </ul>
+            </div>
+            <!--== DASHBOARD INFO ==-->
+            <div class="ad-v2-hom-info">
+                <div class="ad-v2-hom-info-inn">
+                    <ul>
+                        <li>
+                            <div class="ad-hom-box ad-hom-box-1">
+                                <span class="ad-hom-col-com ad-hom-col-1"><i class="fa fa-bar-chart"></i></span>
+                                <div class="ad-hom-view-com">
+                                    <p> Активность</p>
+                                    <h3>22,520</h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ad-hom-box ad-hom-box-2">
+                                <span class="ad-hom-col-com ad-hom-col-2"><i class="fa fa-usd"></i></span>
+                                <div class="ad-hom-view-com">
+                                    <p> Доход</p>
+                                    <h3>22,520</h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ad-hom-box ad-hom-box-3">
+                                <span class="ad-hom-col-com ad-hom-col-3"><i class="fa fa-address-card-o"></i></span>
+                                <div class="ad-hom-view-com">
+                                    <p>Пользователи</p>
+                                    <h3>22,520</h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ad-hom-box ad-hom-box-4">
+                                <span class="ad-hom-col-com ad-hom-col-4"><i class="fa fa-envelope-open-o"></i></span>
+                                <div class="ad-hom-view-com">
+                                    <p> Кол-во полетов</p>
+                                    <h3>22,520</h3>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sb2-2-3">
+                <div class="row">
+            <!--== User Details ==-->
+            <div class="sb2-2-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box-inn-sp">
+                            <div class="inn-title">
+                                <h4>Информация о последних пользователях</h4>
+                            </div>
+                            <div class="tab-inn">
+                                <div class="table-responsive table-desi">
+                                    <table class="table table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th>Ник</th>
+                                            <th>Имя</th>
+                                            <th>Телефон</th>
+                                            <th>Почта</th>
+                                            <th>Страна</th>
+                                            <th>Кол-во полетов</th>
+                                            <th>Действие</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>Marsha_1</td>
+                                            </td>
+                                            <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
+                                            </td>
+                                            <td>+01 3214 6522</td>
+                                            <td>chadengle@dummy.com</td>
+                                            <td>Australia</td>
+                                            <td>
+                                                <span class="label label-primary">02</span>
+                                            </td>
+                                            <td>
+                                                <span class="label label-danger">Удалить</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Marsha_1</td>
+                                            </td>
+                                            <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
+                                            </td>
+                                            <td>+01 3214 6522</td>
+                                            <td>chadengle@dummy.com</td>
+                                            <td>Australia</td>
+                                            <td>
+                                                <span class="label label-primary">02</span>
+                                            </td>
+                                            <td>
+                                                <span class="label label-danger">Удалить</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Marsha_1</td>
+                                            </td>
+                                            <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
+                                            </td>
+                                            <td>+01 3214 6522</td>
+                                            <td>chadengle@dummy.com</td>
+                                            <td>Australia</td>
+                                            <td>
+                                                <span class="label label-primary">02</span>
+                                            </td>
+                                            <td>
+                                                <span class="label label-danger">Удалить</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Marsha_1</td>
+                                            </td>
+                                            <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
+                                            </td>
+                                            <td>+01 3214 6522</td>
+                                            <td>chadengle@dummy.com</td>
+                                            <td>Australia</td>
+                                            <td>
+                                                <span class="label label-primary">02</span>
+                                            </td>
+                                            <td>
+                                                <span class="label label-danger">Удалить</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Marsha_1</td>
+                                            </td>
+                                            <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
+                                            </td>
+                                            <td>+01 3214 6522</td>
+                                            <td>chadengle@dummy.com</td>
+                                            <td>Australia</td>
+                                            <td>
+                                                <span class="label label-primary">02</span>
+                                            </td>
+                                            <td>
+                                                <span class="label label-danger">Удалить</span>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sb2-2-3">
+                <div class="row">
+            <!--== User Details ==-->
+            <div class="sb2-2-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box-inn-sp">
+                            <div class="inn-title">
+                                <h4>Google Map</h4>
+                            </div>
+                            <div class="tab-inn">
+                                <div class="table-responsive table-desi tab-map">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d139178.88785769237!2d23.98873648242918!3d56.971582950716204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eecfb0e5073ded%3A0x400cfcd68f2fe30!2z0KDQuNCz0LA!5e0!3m2!1sru!2slv!4v1621940860506!5m2!1sru!2slv" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--======== SCRIPT FILES =========-->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/materialize.min.js"></script>
+<script src="js/custom.js"></script>
 </body>
+
 </html>
