@@ -6,7 +6,9 @@ body {
 }
 
 .header {
-    height: 80px;
+    margin-top: 0px;
+    height: 86px;
+    background-color: white;
 }
 
 input {
