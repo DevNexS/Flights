@@ -199,3 +199,13 @@ body {
     line-height: 1.625rem;
     font-weight: 400;
 }
+
+.footer {
+    float: center;
+    font: icon;
+    position:absolute;
+    bottom:0;
+    background-color: #1C2848;
+    color: #fff;
+    width: 100%;
+}
