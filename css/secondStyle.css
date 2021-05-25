@@ -29,7 +29,7 @@ table {
     margin-left: 60px;
     height: 20px;
     width: 80px;
-    background-color: #1C2848;
+    background-color: #1a2647;
 }
 
 #avia {
@@ -40,40 +40,28 @@ th{
     color: #fff;
     font: icon;
 }
-.footer {
-    float: center;
-    font: icon;
-    position: inherit;
-    bottom:0;
-    background-color: #1C2848;
-    color: #fff;
-    width: 100%;
-}
-
-.more {
-    margin-left: 200px;
-    margin-right: auto;
-    justify-content: center;
-    margin-right: 40px;
-    display: inline-flex;
-}
-
-p {
-    margin: 5px;
-}
-.aboutUs {
-    margin-right: 40px;
-    display: inline-flex;
-}
-.help {
-    margin-right: 40px;
-    display: inline-flex;
-}
-
-h2 {
-    color: #ff7b59;
-}
 
 .space {
     margin-bottom: 30px;
 }
+
+.menu {
+    width: 73.75%;
+    height: 60px;
+    background-color: #1C2848;
+    margin-left: 300px;
+    margin-top: 86px;
+}
+
+.flightArea {
+    color: #fff;
+    font: icon;
+    margin-left: 80px
+}
+
+.line {
+    border-bottom: 1px solid #9A9A9A;
+    margin-left: 305px;
+    width: 73.2%;
+    margin-top: 10px;
+   }

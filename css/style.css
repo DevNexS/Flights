@@ -42,7 +42,7 @@ body {
     border-color:#0770e3;
 }
 .aviasquare {
-    background-color: #042759;
+    background-color: #1C2848;
     color: #fff;
     position: absolute;
     padding-bottom: 8px;
@@ -233,4 +233,8 @@ p {
 
 h2 {
     color: #ff7b59;
+}
+
+.space {
+    margin-bottom: 30px;
 }
