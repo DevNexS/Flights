@@ -108,9 +108,6 @@ body {
     position: absolute;
     line-height: 1.3!important;
 }
-.triangle {
-
-}
 .map {
     max-width: 65.5rem;
     position: absolute;
@@ -243,7 +240,6 @@ h2 {
 
 .space {
     margin-bottom: 30px;
-<<<<<<< HEAD
 }
 .switchbutton {
     width: 50px;
@@ -294,3 +290,38 @@ h2 {
     top: 65px;
     height: 50px;
     position: absolute;
+}
+.middlebackground {
+    position: absolute;
+    width: 100%;
+    right: 0.5px;
+    top: 1270px;
+    height: 500px;
+    background-color: #f1f2f8;
+}
+.photo3 {
+    top: 50px;
+    width: 250px;
+    position: absolute;
+    right: 300px;
+}
+.photo4 {
+    top: 50px;
+    width: 250px;
+    position: absolute;
+    right: 800px;
+}
+.photo5 {
+    top: 50px;
+    width: 200px;
+    position: absolute;
+    left: 300px;
+}
+.text3 {
+    top: 90px;
+    position: absolute;
+    right: 300px;
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    font-weight: 400;
+}
