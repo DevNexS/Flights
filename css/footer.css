@@ -1,0 +1,35 @@
+.footer {
+    top: 2000px;
+    float: center;
+    font: icon;
+    right: 0.5px;
+    position: absolute;
+    background-color: #1C2848;
+    color: #fff;
+    width: 100%;
+}
+
+.more {
+    margin-left: 430px;
+    margin-right: auto;
+    justify-content: center;
+    margin-right: 250px;
+    display: inline-flex;
+}
+
+.aboutUs {
+    margin-right: 250px;
+    display: inline-flex;
+}
+.help {
+    margin-right: 250px;
+    display: inline-flex;
+}
+
+.space {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #ff7b59;
+}
