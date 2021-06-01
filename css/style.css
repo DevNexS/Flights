@@ -34,7 +34,26 @@ body {
     border-top-left-radius: 7px;
     border-bottom-left-radius: 7px;
 }
-
+.classselect {
+    display: inline-block;
+    padding: .375rem .75rem;
+    border: .0625rem solid #b2b2bf;
+    background: #fff;
+    width: 210px;
+    color: #111236;
+    right: 22px;
+    top: 65px;
+    height: 50px;
+    position: absolute;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+.classselecttext {
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: left;
+    cursor: pointer;
+}
 .foto {
     min-height: 530px;
     width: 100%;
@@ -163,6 +182,7 @@ p {
     border: .0625rem solid #b2b2bf;
     border-right: 0;
     border-radius: 0;
+    border-left-width: 0px;
     outline: none;
     background-color: #fff;
     cursor: pointer;
@@ -224,10 +244,10 @@ p {
     right: 850px;
 }
 .photo5 {
-    top: 50px;
+    top: 20px;
     width: 200px;
     position: absolute;
-    left: 300px;
+    left: 315px;
 }
 .text3 {
     top: 315px;
@@ -237,7 +257,7 @@ p {
     line-height: 1.625rem;
     font-weight: 700;
 }
-.text4 {
+.text32 {
     text-align: center;
     font-size: 1rem;
     line-height: 1.25rem;
@@ -246,4 +266,87 @@ p {
     position: absolute;
     right: 290px;
     font-weight: 400;
+}
+.text4 {
+    top: 315px;
+    position: absolute;
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    right: 870px;
+    font-weight: 700;
+}
+.text42 {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    max-width: 250px;
+    top: 360px;
+    position: absolute;
+    right: 850px;
+    font-weight: 400;
+}
+.text5 {
+    top: 315px;
+    position: absolute;
+    left: 310px;
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    font-weight: 700;
+}
+.text52 {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    max-width: 250px;
+    top: 360px;
+    position: absolute;
+    left: 290px;
+    font-weight: 400;
+}
+.labels {
+    font-size: .75rem;
+    font-weight: 700;
+    line-height: 1rem;
+    color: #fff;
+    top: 50px;
+    position: absolute;
+    left: 30px
+}
+.label1 {
+    margin-right: 240px;
+}
+.label2 {
+    margin-right: 193px;
+}
+.label3 {
+    margin-right: 98px;
+}
+.label4 {
+    margin-right: 75px;
+}
+.findbilet {
+    background-color: #00A698;
+    position: absolute;
+    right: 20px;
+    height: 40px;
+    width: 220px;
+    color: #fff;
+    bottom: 20px;
+    border: 0;
+    border-radius: .375rem;
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+}
+.buttonicon {
+    position: absolute;
+    right: 28px;
+    bottom: 27px;
+    fill: rgb(255,255,255);
+}
+.findtext {
+    position: absolute;
+    display: flex;
+    top: 5px;
+    left: 13px;
+    font-weight: 550;
 }
