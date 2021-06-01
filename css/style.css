@@ -230,25 +230,24 @@ body {
 .photo3 {
     top: 50px;
     width: 250px;
-    position: absolute;
-    right: 300px;
+    position: inherit;
+    right: 450px;
 }
 .photo4 {
     top: 50px;
-    width: 250px;
-    position: absolute;
-    right: 850px;
+    position: inherit;
+    right: 780px;
 }
 .photo5 {
     top: 20px;
     width: 200px;
-    position: absolute;
-    left: 315px;
+    position: inherit;
+    left: 450px;
 }
 .text3 {
     top: 315px;
     position: absolute;
-    right: 320px;
+    right: 450px;
     font-size: 1.25rem;
     line-height: 1.625rem;
     font-weight: 700;
@@ -260,15 +259,15 @@ body {
     max-width: 250px;
     top: 360px;
     position: absolute;
-    right: 290px;
+    right: 420px;
     font-weight: 400;
 }
 .text4 {
     top: 315px;
-    position: absolute;
+    position: inherit;
     font-size: 1.25rem;
     line-height: 1.625rem;
-    right: 870px;
+    right: 820px;
     font-weight: 700;
 }
 .text42 {
@@ -278,13 +277,13 @@ body {
     max-width: 250px;
     top: 360px;
     position: absolute;
-    right: 850px;
+    right: 802px;
     font-weight: 400;
 }
 .text5 {
     top: 315px;
     position: absolute;
-    left: 310px;
+    left: 450px;
     font-size: 1.25rem;
     line-height: 1.625rem;
     font-weight: 700;
@@ -296,7 +295,7 @@ body {
     max-width: 250px;
     top: 360px;
     position: absolute;
-    left: 290px;
+    left: 430px;
     font-weight: 400;
 }
 .labels {
