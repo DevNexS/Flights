@@ -1,0 +1,77 @@
+.header {
+    margin-top: 0px;
+    background-color: white;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 106px;
+}
+
+.login {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .875rem;
+    position: absolute;
+    background-color: #fff;
+    right: 200px;
+    top: 15px;
+    color: #0770e3;
+    padding: .375rem 1.125rem;
+    border-radius: .25rem;
+    font-weight: 700;
+    margin-left: .75rem;
+}
+.login:hover {
+    border-color:#0770e3;
+}
+
+.logo {
+    position: absolute;
+    left: 300px;
+    top: 20px;
+}
+
+.faq {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .875rem;
+    position: absolute;
+    right: 420px;
+    top: 20px;
+    color: #0770e3;
+}
+
+.aviasquare {
+    background-color: #1C2848;
+    color: #fff;
+    position: absolute;
+    padding-bottom: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    top: 70px;
+    left: 300px;
+    padding-right: 14px;
+    padding-top: 8px;
+    text-decoration: none;
+    padding-left: 14px;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+
+.aviasquare:active {
+    background-color:  #0770e3;
+    color: #fff;
+    box-shadow: inset 0 0 0 1px #0770e3;
+}
+.aviasquare:hover {
+    background-color: #0770e3;
+    color: #fff;
+    box-shadow: inset 0 0 0 1px #0770e3;
+}
+
+.aviabutton {
+    margin-left: .375rem;
+}
+
+
+
