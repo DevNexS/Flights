@@ -43,15 +43,18 @@ th{
 }
 
 .flightArea {
+    position: absolute;
+    margin-top: 13px;
     color: #fff;
     font: icon;
     margin-left: 80px;
-    margin-bottom: -15px;
 }
 
 .ticketForm {
+    position: absolute;
     vertical-align: -webkit-baseline-middle ;
     margin-left: 80px;
+    margin-top: 27px;
     color: #fff;
     font-size: 14px;
 }
@@ -116,11 +119,97 @@ th{
 
 #popUpInfo {
     position: absolute;
-    visibility: hidden;
+    visibility: show;
     background-color: #fff;
-    height: 100px;
+    height: 200px;
     width: 1385px;
     margin-top: 0px ;
-    border-bottom-right-radius: 2px;
-    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.venasPhoto {
+    margin-top: -5px;
+    margin-left: 20px;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.informaacija {
+    position: absolute;
+    margin-left: 100px;
+}
+
+.name {
+    position: absolute;
+    margin-left:240px;
+    margin-top: -5px;
+    font-weight: 500;
+    font-size:24px;
+}
+
+.quantityOfTransfers {
+    position: absolute;
+    margin-left:240px;
+    margin-top:24px;
+    font-weight: lighter;
+    color: #61C28E;
+    font-size: 20px;
+}
+
+.price {
+    position: absolute;
+    margin-left:1200px;
+    margin-top:45px;
+
+    font-size: 18px;
+}  
+
+.guide {
+    position: absolute;
+    margin-left:1125px;
+    margin-top:75px;
+
+    text-decoration: none;
+    font-size: 18px
+}  
+
+.reservation {
+    position: absolute;
+    margin-left:1050px;
+    margin-top:130px;
+
+    text-decoration: none;
+    font-size: 18px
+}
+
+.buyBtn {
+    position: absolute;
+    margin-left:1200px;
+    margin-bottom:-100px;
+    margin-top:120px;
+
+    border:none;
+    background-color: #4B9C7F;
+    color: white;
+    width: 160px;
+    height: 35px;
+    border-radius: 4px;
+    font-size: 20px;
+}
+
+.line1 {
+    position: absolute;
+    border-bottom: 1px solid #9A9A9A;
+    margin-left: 240px;
+    width: 81%;
+    margin-top: 70px;
+}
+
+.line2 {
+    position: absolute;
+    border-bottom: 1px solid #9A9A9A;
+    margin-left: 240px;
+    width: 81%;
+    margin-top: 105px;
 }
