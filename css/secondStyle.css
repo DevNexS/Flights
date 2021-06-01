@@ -45,7 +45,15 @@ th{
 .flightArea {
     color: #fff;
     font: icon;
-    margin-left: 80px
+    margin-left: 80px;
+    margin-bottom: -15px;
+}
+
+.ticketForm {
+    vertical-align: -webkit-baseline-middle ;
+    margin-left: 80px;
+    color: #fff;
+    font-size: 14px;
 }
 
 .line {
@@ -72,9 +80,37 @@ th{
     margin-top: 18px;
 }
 
-.moreBtn {
-    border-radius: 36px;
-    background-color: none;
-    margin-left: 95%;
-    margin-bottom: 20px;
+#avstrija {
+    margin: 10px;
 }
+
+.moreBtn {
+    position: absolute;
+    top: 15px;
+    left: 1330px;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    background-color: #fff;
+    border: 2px solid gray;
+    
+}
+
+.moreBtn:after {
+    position: absolute;
+    top: 7px;;
+    left: 8px;
+    content: '';
+    display: block;
+    width: 7px;
+    height: 7px;
+    border-left: 3px solid blue;
+    border-bottom: 3px solid blue;
+    transform: rotate(-45deg);
+}
+
+.moreBtn:active {
+    transform: rotate(180deg);
+}
+
+
