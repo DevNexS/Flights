@@ -1,0 +1,353 @@
+body {
+    color: #111236;
+    width: 100%;    
+    height: 100%;
+    display: inline;
+    font-family: "Skyscanner Relative",-apple-system,BlinkMacSystemFont,"Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    font-size: 1rem;
+    line-height: 1.3rem;
+}
+
+.findform {
+    position: absolute;
+    left: 416px;
+    padding-right: 60px;
+    padding-left: 100px;
+    padding-bottom: 100px;
+    padding-top: 90px;
+    top: 280px;
+    width: 870px;
+    background-color: #02122c;
+}
+
+.nokuriene {
+    display: inline-block;
+    padding: .375rem .75rem;
+    border: .0625rem solid #b2b2bf;
+    background: #fff;
+    width: 210px;
+    color: #111236;
+    left: 30px;
+    top: 65px;
+    height: 36px;
+    position: absolute;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+.classselect {
+    display: inline-block;
+    padding: .375rem .75rem;
+    border: .0625rem solid #b2b2bf;
+    background: #fff;
+    width: 210px;
+    color: #111236;
+    right: 22px;
+    top: 65px;
+    height: 50px;
+    position: absolute;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+.classselecttext {
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: left;
+    cursor: pointer;
+}
+.foto {
+    min-height: 530px;
+    width: 100%;
+    position: absolute;
+    right: 0.5px;
+    margin-top: 106px;
+    margin: 30;
+    background-repeat: no-repeat;
+    background-position: 50% 60%;
+    background-size: cover;
+}
+.nadpis1 {
+    color: #fff;
+    font-size: 3.2rem!important;
+    top: 40px;
+    left: 425px;
+    position: absolute;
+    line-height: 1.3!important;
+}
+.map {
+    max-width: 65.5rem;
+    position: absolute;
+    top: 740px;
+    width: 1048px;
+    left: 406px;
+    height: 354px;
+    border-radius: 0.75rem;
+    background-color: #f1f2f8;
+    box-shadow: 0 1px 3px 0 rgb(37 32 31 / 30%);
+}
+.maph3 {
+    font-size: 1.875rem;
+    line-height: 0.2rem;
+    position: initial;
+    margin-left: 35px;
+    margin-top: 60px;
+}
+.maph4 {
+    font-size: 1.875rem;
+    margin-left: 35px;
+}
+.mapicon {
+    width: 509px;
+    height: 350px;
+    position: absolute;
+    bottom: 5px;
+    left: 520px;
+}
+.legend {
+    position: absolute;
+    background-color: #f1f2f8;
+    right: 0;
+    top: 0;
+    margin: 1.875rem 1.875rem 1.875rem 0;
+    padding: .75rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.legendtravel {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.legendh4 {
+    font-weight: 700;
+    font-size: .75rem;
+    line-height: 0.2rem;
+    padding-right: 50px;
+}
+.legendh41 {
+    font-weight: 700;
+    font-size: .75rem;
+    line-height: 0.2rem;
+    margin-bottom: 1.25rem;
+    padding-right: 50px;
+}
+.legendcircles {
+    display: inline-block;
+    width: .75rem;
+    height: .75rem;
+    margin-right: .75rem;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.greencolor {
+    background-color: #00a698;
+}
+.yellowcolor {
+    background-color: #ff9400;
+}
+.redcolor {
+    background-color: #d1435b;
+}
+.greycolor {
+    background-color: #b2b2bf;
+}
+.legendspantext {
+    font-size: .75rem;
+    line-height: 1rem;
+    font-weight: 400;
+}
+.legendtext {
+    margin-bottom: .75rem;
+    line-height: 1rem;
+}
+.maxptext {
+    max-width: 25rem;
+    margin-left: 36px;  
+}
+.ptext {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    font-weight: 400;
+}
+
+.switchbutton {
+    width: 50px;
+    height: 50px;
+    top: 65px;
+    position: absolute;
+    left: 265px;
+    padding: 0;
+    border: .0625rem solid #b2b2bf;
+    border-right: 0;
+    border-radius: 0;
+    border-left-width: 0px;
+    outline: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+.wheretogo {
+    display: inline-block;
+    padding: .375rem .75rem;
+    border: .0625rem solid #b2b2bf;
+    background: #fff;
+    width: 200px;
+    color: #111236;
+    left: 315px;
+    top: 65px;
+    height: 36px;
+    position: absolute;
+}
+.datepick {
+    display: inline-block;
+    padding: .375rem .75rem;
+    border: .0625rem solid #b2b2bf;
+    background: #fff;
+    width: 130px;
+    color: #111236;
+    left: 540px;
+    top: 65px;
+    height: 50px;
+    position: absolute;
+}
+.backpick {
+    display: inline-block;
+    padding: .375rem .75rem;
+    border: .0625rem solid #b2b2bf;
+    background: #fff;
+    width: 130px;
+    color: #111236;
+    left: 669px;
+    top: 65px;
+    height: 50px;
+    position: absolute;
+}
+.middlebackground {
+    position: absolute;
+    width: 100%;
+    right: 0.5px;
+    top: 1270px;
+    height: 500px;
+    background-color: #f1f2f8;
+}
+.photo3 {
+    top: 50px;
+    width: 250px;
+    position: inherit;
+    right: 450px;
+}
+.photo4 {
+    top: 50px;
+    position: inherit;
+    right: 780px;
+}
+.photo5 {
+    top: 20px;
+    width: 200px;
+    position: inherit;
+    left: 450px;
+}
+.text3 {
+    top: 315px;
+    position: absolute;
+    right: 450px;
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    font-weight: 700;
+}
+.text32 {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    max-width: 250px;
+    top: 360px;
+    position: absolute;
+    right: 420px;
+    font-weight: 400;
+}
+.text4 {
+    top: 315px;
+    position: inherit;
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    right: 820px;
+    font-weight: 700;
+}
+.text42 {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    max-width: 250px;
+    top: 360px;
+    position: absolute;
+    right: 802px;
+    font-weight: 400;
+}
+.text5 {
+    top: 315px;
+    position: absolute;
+    left: 450px;
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    font-weight: 700;
+}
+.text52 {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    max-width: 250px;
+    top: 360px;
+    position: absolute;
+    left: 430px;
+    font-weight: 400;
+}
+.labels {
+    font-size: .75rem;
+    font-weight: 700;
+    line-height: 1rem;
+    color: #fff;
+    top: 50px;
+    position: absolute;
+    left: 30px
+}
+.label1 {
+    margin-right: 240px;
+}
+.label2 {
+    margin-right: 193px;
+}
+.label3 {
+    margin-right: 98px;
+}
+.label4 {
+    margin-right: 75px;
+}
+.findbilet {
+    background-color: #00A698;
+    position: absolute;
+    right: 20px;
+    height: 40px;
+    width: 240px;
+    color: #fff;
+    bottom: 20px;
+    border: 0;
+    border-radius: .375rem;
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+}
+.findbilet:hover {
+    background-color: #00887d;
+}
+.findbilet:active {
+    background-color: #006A61;
+}
+.buttonicon {
+    position: absolute;
+    right: 39px;
+    bottom: 27px;
+    fill: rgb(255,255,255);
+}
+.findtext {
+    position: absolute;
+    display: flex;
+    top: 5px;
+    left: 22px;
+    font-weight: 550;
+}
