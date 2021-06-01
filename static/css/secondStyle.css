@@ -86,6 +86,7 @@ th{
 
 #avstrija {
     margin: 10px;
+    margin-left: 20px;
 }
 
 .moreBtn {
@@ -113,13 +114,13 @@ th{
     transform: rotate(-45deg);
 }
 
-.moreBtn:active {
+.moreBtn:hover{
     transform: rotate(180deg);
 }
 
 #popUpInfo {
     position: absolute;
-    visibility: show;
+    display: none;
     background-color: #fff;
     height: 200px;
     width: 1385px;

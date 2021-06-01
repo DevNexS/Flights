@@ -1,10 +1,9 @@
 document.getElementById("showHide").onclick = function() {
-    var theDiv = document.getElementsById("popUpInfo");
+    var theDiv = document.getElementById("popUpInfo");
     if(theDiv.style.display == 'none') {
         theDiv.style.display = 'block';
-        this.innerHTML = 'Hide';
-    } else {
+    } 
+    else {
         theDiv.style.display = 'none';
-        this.innerHTML = 'Show';
     }
 }
