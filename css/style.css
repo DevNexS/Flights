@@ -325,7 +325,7 @@ body {
     position: absolute;
     right: 20px;
     height: 40px;
-    width: 220px;
+    width: 240px;
     color: #fff;
     bottom: 20px;
     border: 0;
@@ -335,7 +335,7 @@ body {
 }
 .buttonicon {
     position: absolute;
-    right: 28px;
+    right: 39px;
     bottom: 27px;
     fill: rgb(255,255,255);
 }
@@ -343,6 +343,6 @@ body {
     position: absolute;
     display: flex;
     top: 5px;
-    left: 13px;
+    left: 22px;
     font-weight: 550;
 }
