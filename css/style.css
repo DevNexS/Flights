@@ -333,6 +333,12 @@ body {
     font-size: 1.5rem;
     line-height: 1.875rem;
 }
+.findbilet:hover {
+    background-color: #00887d;
+}
+.findbilet:active {
+    background-color: #006A61;
+}
 .buttonicon {
     position: absolute;
     right: 39px;
