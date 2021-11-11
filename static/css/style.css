@@ -27,7 +27,7 @@ body {
     background: #fff;
     width: 210px;
     color: #111236;
-    left: 30px;
+    left: 29px;
     top: 65px;
     height: 36px;
     position: absolute;
@@ -350,4 +350,7 @@ body {
     top: 5px;
     left: 22px;
     font-weight: 550;
+}
+.datatime-local {
+    border: none;
 }

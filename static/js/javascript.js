@@ -7,3 +7,8 @@ document.getElementById("showHide").onclick = function() {
         theDiv.style.display = 'none';
     }
 }
+
+$('#findtext').click(function() {
+    window.location.href = '/some/new/page';
+    return false;
+});
