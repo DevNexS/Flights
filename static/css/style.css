@@ -25,7 +25,7 @@ body {
     padding: .375rem .75rem;
     border: .0625rem solid #b2b2bf;
     background: #fff;
-    width: 210px;
+    width: 180px;
     color: #111236;
     left: 29px;
     top: 65px;
@@ -39,7 +39,7 @@ body {
     padding: .375rem .75rem;
     border: .0625rem solid #b2b2bf;
     background: #fff;
-    width: 210px;
+    width: 205px;
     color: #111236;
     right: 22px;
     top: 65px;
@@ -173,7 +173,7 @@ body {
     height: 50px;
     top: 65px;
     position: absolute;
-    left: 265px;
+    left: 235px;
     padding: 0;
     border: .0625rem solid #b2b2bf;
     border-right: 0;
@@ -188,9 +188,9 @@ body {
     padding: .375rem .75rem;
     border: .0625rem solid #b2b2bf;
     background: #fff;
-    width: 200px;
+    width: 180px;
     color: #111236;
-    left: 315px;
+    left: 280px;
     top: 65px;
     height: 36px;
     position: absolute;
@@ -200,9 +200,9 @@ body {
     padding: .375rem .75rem;
     border: .0625rem solid #b2b2bf;
     background: #fff;
-    width: 130px;
+    width: 160px;
     color: #111236;
-    left: 540px;
+    left: 485px;
     top: 65px;
     height: 50px;
     position: absolute;
@@ -212,9 +212,9 @@ body {
     padding: .375rem .75rem;
     border: .0625rem solid #b2b2bf;
     background: #fff;
-    width: 130px;
+    width: 160px;
     color: #111236;
-    left: 669px;
+    left: 644px;
     top: 65px;
     height: 50px;
     position: absolute;
@@ -308,16 +308,16 @@ body {
     left: 30px
 }
 .label1 {
-    margin-right: 240px;
+    margin-right: 205px;
 }
 .label2 {
-    margin-right: 193px;
+    margin-right: 173px;
 }
 .label3 {
-    margin-right: 98px;
+    margin-right: 130px;
 }
 .label4 {
-    margin-right: 75px;
+    margin-right: 103px;
 }
 .findbilet {
     background-color: #00A698;
@@ -351,6 +351,14 @@ body {
     left: 22px;
     font-weight: 550;
 }
-.datatime-local {
+.date {
     border: none;
+    width: 25px;
+}
+
+#start {
+    width: 125px;
+}
+#end {
+    width: 125px;
 }

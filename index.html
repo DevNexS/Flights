@@ -44,10 +44,14 @@
         </button>
         <input type="text" class="wheretogo" placeholder="Страна, город или аэропорт">
         <button id="datepicker" class="datepick" type="button" title="Дата вылета">
-            <span class="datatime-local"><input type = "datetime-local"></span>
+            <span class="date"><input type="date" id="start" name="trip-start"
+                                min="2021-11-11" max="2022-12-31">
+            </span>
         </button>
         <button id="backpicker" class="backpick" type="button" title="Дата возвращения">
-            <span class=""></span>
+            <span class="date"><input type="date" id="end" name="trip-end"
+                                min="2021-11-11" max="2022-12-31">
+            </span>
         </button>
         <button id="classselector" class="classselect" type="button">
             <span class="classselecttext"></span>
