@@ -358,7 +358,11 @@ body {
 
 #start {
     width: 125px;
+    border: none;
+    outline: none;
 }
 #end {
     width: 125px;
+    border: none;
+    outline: none;
 }
