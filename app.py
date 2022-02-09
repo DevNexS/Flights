@@ -16,7 +16,7 @@ def login():
 
 @app.route('/register.html')
 def register():
-    return render_template("footerPages/register.html")
+    return render_template("register.html")
 
 @app.route('/airports.html')
 def airports():
@@ -57,6 +57,5 @@ def settings():
 @app.route('/panel.html')
 def panel():
     return render_template("footerPages/panel.html")
-
 
 app.run(host='0.0.0.0', port=8080)
