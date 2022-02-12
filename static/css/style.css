@@ -350,6 +350,7 @@ body {
     top: 5px;
     left: 22px;
     font-weight: 550;
+    color: #fff;
 }
 .date {
     border: none;
@@ -378,4 +379,8 @@ body {
 
 mark {
     bottom: gray;
+}
+
+a  {
+    text-decoration: none;
 }
