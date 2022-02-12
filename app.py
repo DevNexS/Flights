@@ -56,6 +56,6 @@ def settings():
 
 @app.route('/panel.html')
 def panel():
-    return render_template("footerPages/panel.html")
+    return render_template("panel.html")
 
 app.run(host='0.0.0.0', port=8080)
