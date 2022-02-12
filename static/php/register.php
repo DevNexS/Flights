@@ -17,16 +17,13 @@ $error_message = ""; $success_message = "";
 // Register user
 if(isset($_POST['btnsignup'])){
     $nickname = trim($_POST['nickname']);
-    $username = trim($_POST['username']);
     $password = trim($_POST['password']);
     $email = trim($_POST['email']);
-    $phone = trim($_POST['phone']);
-    $country = trim($_POST['country']);
 
     $isValid = true;
 
     // Check fields are empty or not
-    if($nickname == '' || $username == '' || $password == '' || $email == '' || $phone == '' || $country == ''){
+    if($nickname == '' || $password == '' || $email == ''){
         $isValid = false;
         $error_message = "Please fill all fields.";
     }
@@ -54,9 +51,9 @@ if(isset($_POST['btnsignup'])){
 
     // Insert records
     if($isValid){
-        $insertSQL = "INSERT INTO users(nickname,username,password,email,phone,country) values(?,?,?,?,?,?)";
+        $insertSQL = "INSERT INTO users(nickname,password,email) values(?,?,?)";
         $stmt = $con->prepare($insertSQL);
-        $stmt->bind_param("ssssss",$nickname,$username, $password, $email, $phone, $country);
+        $stmt->bind_param("ssssss",$nickname, $password, $email);
         $stmt->execute();
         $stmt->close();
 
@@ -86,12 +83,6 @@ if(isset($_POST['btnsignup'])){
 						Registration
 					</span>
 
-                <div class="wrap-input100 validate-input m-b-16" data-validate = "Name is required">
-                    <input class="input100" type="text" name="username" placeholder="Name">
-                    <span class="focus-input100"></span>
-                </div>
-
-
                 <div class="wrap-input100 validate-input m-b-16" data-validate = "Nickname is required">
                     <input class="input100" type="text" name="nickname" placeholder="Nickname">
                     <span class="focus-input100"></span>
@@ -104,18 +95,6 @@ if(isset($_POST['btnsignup'])){
 
                 <div class="wrap-input100 validate-input m-b-16" data-validate = "Email is required">
                     <input class="input100" type="text" name="email" placeholder="Email">
-                    <span class="focus-input100"></span>
-                </div>
-
-
-                <div class="wrap-input100 validate-input m-b-16" data-validate = "Phone is required">
-                    <input class="input100" type="text" name="phone" placeholder="Phone">
-                    <span class="focus-input100"></span>
-                </div>
-
-
-                <div class="wrap-input100 validate-input m-b-16" data-validate = "Country is required">
-                    <input class="input100" type="text" name="country" placeholder="Country">
                     <span class="focus-input100"></span>
                 </div>
 
