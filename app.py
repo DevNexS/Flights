@@ -10,9 +10,9 @@ def index():
 def secondlpp():
     return render_template("secondlpp.html")
 
-@app.route('/login.html')
+@app.route('/login.php')
 def login():
-    return render_template("login.html")
+    return render_template("static/php/login.php")
 
 @app.route('/register.php')
 def register():
@@ -61,5 +61,33 @@ def settings():
 @app.route('/panel.html')
 def panel():
     return render_template("panel.html")
+
+# @app.route('/Latvia.html')
+# def panel():
+#     return render_template("countries/Latvia.html")
+
+# @app.route('/Netherlands.html')
+# def panel():
+#     return render_template("countries/Netherlands.html")
+
+# @app.route('/Norway.html')
+# def panel():
+#     return render_template("countries/Norway.html")
+
+# @app.route('/Romania.html')
+# def panel():
+#     return render_template("countries/Romania.html")
+
+# @app.route('/Russia.html')
+# def panel():
+#     return render_template("countries/Russia.html")
+
+# @app.route('/Spain.html')
+# def panel():
+#     return render_template("countries/Spain.html")
+
+# @app.route('/USA.html')
+# def panel():
+#     return render_template("countries/USA.html")
 
 app.run(host='0.0.0.0', port=8080)
