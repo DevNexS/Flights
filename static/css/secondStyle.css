@@ -214,3 +214,8 @@ th{
     width: 81%;
     margin-top: 105px;
 }
+
+a {
+    text-decoration: none;
+    color: #0770e3;
+}
