@@ -386,55 +386,55 @@ a  {
 }
 
 /* Стиль меню навигации */
-#myMenu {
+.elastic {
     position: absolute;
     list-style-type: none;
     width: 204px;
     padding-top: 9px;
     left: -10px;
     display: none;
-  }
+}
   
-  /* Стиль навигационных ссылок */
-  #myMenu li a {
-    
+/* Стиль навигационных ссылок */
+.elastic li a {
     padding: 2px;
     text-decoration: none;
     color: gray;
     display: flex;
     background-color: #fff;
-  }
+}
   
-  #myMenu li a:hover {
-    background-color: #FFFAF0;
-  }
-
-  #myMenu2 {
-    position: absolute;
-    list-style-type: none;
-    width: 204px;
-    padding-top: 9px;
-    right: 545px;
-    top: 90px;
-    display: none;
-  }
-  
-  /* Стиль навигационных ссылок */
-  #myMenu2 li a {
-    
-    padding: 2px;
-    text-decoration: none;
-    color: gray;
-    display: flex;
-    background-color: #fff;
-    border: gray;
-    
-  }
-  
-  #myMenu2 li a:hover {
-    background-color: #FFFAF0;
-  }
+.elastic li a:hover {
+background-color: #FFFAF0;
+}
 
 .elastic li.hide{
+    display: none;
+}
+
+/* Стиль меню навигации */
+.elastic2 {
+    position: absolute;
+    list-style-type: none;
+    width: 205px;
+    padding-top: 9px;
+    left: 240px;
+    display: none;
+}
+  
+/* Стиль навигационных ссылок */
+.elastic2 li a {
+    padding: 2px;
+    text-decoration: none;
+    color: gray;
+    display: flex;
+    background-color: #fff;
+}
+  
+.elastic2 li a:hover {
+background-color: #FFFAF0;
+}
+
+.elastic2 li.hide{
     display: none;
 }
