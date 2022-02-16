@@ -10,7 +10,7 @@ def index():
 def secondlpp():
     return render_template("secondlpp.html")
 
-@app.route('/login.html')
+@app.route('/login.php')
 def login():
     return render_template("static/php/login.php")
 
@@ -66,28 +66,28 @@ def panel():
 def latvia():
     return render_template("countries/latvia.html")
 
-# @app.route('/Netherlands.html')
-# def panel():
-#     return render_template("countries/Netherlands.html")
+@app.route('/Netherlands.html')
+def netherlands():
+    return render_template("countries/Netherlands.html")
 
-# @app.route('/Norway.html')
-# def panel():
-#     return render_template("countries/Norway.html")
+@app.route('/Norway.html')
+def norway():
+    return render_template("countries/Norway.html")
 
-# @app.route('/Romania.html')
-# def panel():
-#     return render_template("countries/Romania.html")
+@app.route('/Romania.html')
+def romania():
+    return render_template("countries/Romania.html")
 
-# @app.route('/Russia.html')
-# def panel():
-#     return render_template("countries/Russia.html")
+@app.route('/Russia.html')
+def russia():
+    return render_template("countries/Russia.html")
 
-# @app.route('/Spain.html')
-# def panel():
-#     return render_template("countries/Spain.html")
+@app.route('/Spain.html')
+def spain():
+    return render_template("countries/Spain.html")
 
-# @app.route('/USA.html')
-# def panel():
-#     return render_template("countries/USA.html")
+@app.route('/USA.html')
+def usa():
+    return render_template("countries/USA.html")
 
 app.run(host='0.0.0.0', port=8080)
