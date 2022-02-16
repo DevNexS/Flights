@@ -1,19 +1,5 @@
-// document.getElementById("showHide").onclick = function() {
-//     var theDiv = document.getElementById("popUpInfo");
-//     if(theDiv.style.display == 'none') {
-//         theDiv.style.display = 'block';
-//     } 
-//     else {
-//         theDiv.style.display = 'none';
-//     }
-// }
-
-// $('#findtext').click(function() {
-//     window.location.href = '/some/new/page';
-//     return false;
-// });
-
-document.getElementById("elastic").onclick = function(){
+//появление 1-го поп-апа
+document.getElementById("elastic").onclick = function (){
     var theMenu = document.getElementById("myMenu");
     if(theMenu.style.display == 'none') {
         theMenu.style.display = 'block';
@@ -23,7 +9,8 @@ document.getElementById("elastic").onclick = function(){
     }
 }
 
-document.getElementById("wheretogo").onclick = function(){
+//появление 2-го поп-апа
+document.getElementById("wheretogo").onclick = function (){
     var theMenu = document.getElementById("myMenu2");
     if(theMenu.style.display == 'none') {
         theMenu.style.display = 'block';
@@ -33,21 +20,24 @@ document.getElementById("wheretogo").onclick = function(){
     }
 }
 
-function myFunction() {
-    // Объявить переменные
-    var input, filter, ul, li, a, i;
-    input = document.getElementById("elastic");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myMenu");
-    li = ul.getElementsByTagName("li");
-  
-    // Прокрутите все элементы списка и скройте те, которые не соответствуют поисковому запросу
-    for (i = 0; i < li.length; i++) {
-      a = li[i].getElementsByTagName("a")[0];
-      if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        li[i].style.display = "";
-      } else {
-        li[i].style.display = "none";
+
+document.querySelector("#elastic").oninput = function (search){
+  let val = this.value.trim();
+  console.log('Привет от JavaScript!');
+  let elasticItems = document.querySelectorAll('#elastic li');
+  if (val != ''){
+    elasticItems.forEach(function (elem){
+      if (elem.innerText.search(val) == -1){
+        elem.classList.add('hide');
       }
-    }
+      else {
+        elem.classList.remove('hide');
+      }
+    });
   }
+  else {
+    elasticItems.forEach(function (elem) {
+      elem.classList.add('hide');
+    });
+  }
+}

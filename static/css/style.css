@@ -427,8 +427,14 @@ a  {
     color: gray;
     display: flex;
     background-color: #fff;
+    border: gray;
+    
   }
   
   #myMenu2 li a:hover {
     background-color: #FFFAF0;
   }
+
+.elastic li.hide{
+    display: none;
+}
