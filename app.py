@@ -14,9 +14,13 @@ def secondlpp():
 def login():
     return render_template("login.html")
 
-@app.route('/register.html')
+@app.route('/register.php')
 def register():
-    return render_template("register.html")
+    return render_template("static/php/register.php")
+
+@app.route('/reservation.html')
+def reservation():
+    return render_template("reservation.html")
 
 @app.route('/airports.html')
 def airports():

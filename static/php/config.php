@@ -1,12 +1,11 @@
 <?php
-session_start();
-$host = "localhost"; /* Host name */
-$user = "name"; /* User */
-$password = "localhost"; /* Password */
-$dbname = "id16842393_admin"; /* Database name */
-
-$con = mysqli_connect($host, $user, $password,$dbname);
-// Check connection
-if (!$con) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+    define('USER', 'admin');
+    define('PASSWORD', 'mama');
+    define('HOST', 'localhost');
+    define('DATABASE', 'Travel');
+    try {
+        $connection = new PDO("mysql:host=".HOST.";dbname=".DATABASE, USER, PASSWORD);
+    } catch (PDOException $e) {
+        exit("Error: " . $e->getMessage());
+    }
+?>

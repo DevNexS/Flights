@@ -1,105 +1,70 @@
 <?php
-session_start();
-$host = "localhost"; /* Host name */
-$user = "id16842393_admin"; /* User */
-$password = "RVT_1_Flights"; /* Password */
-$dbname = "id16842393_main"; /* Database name */
-
-$con = mysqli_connect($host, $user, $password,$dbname);
-// Check connection
-if (!$con) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-?>
-<?php
-$error_message = ""; $success_message = "";
-
-// Register user
-if(isset($_POST['btnsignup'])){
-    $nickname = trim($_POST['nickname']);
-    $password = trim($_POST['password']);
-    $email = trim($_POST['email']);
-
-    $isValid = true;
-
-    // Check fields are empty or not
-    if($nickname == '' || $password == '' || $email == ''){
-        $isValid = false;
-        $error_message = "Please fill all fields.";
-    }
-
-    // Check if Email-ID is valid or not
-    if ($isValid && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $isValid = false;
-        $error_message = "Invalid Email-ID.";
-    }
-
-    if($isValid){
-
-        // Check if Email-ID already exists
-        $stmt = $con->prepare("SELECT * FROM users WHERE email = ?");
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $stmt->close();
-        if($result->num_rows > 0){
-            $isValid = false;
-            $error_message = "Email-ID is already existed.";
+    session_start();
+    include('config.php');
+    if (isset($_POST['register'])) {
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $password_hash = password_hash($password, PASSWORD_BCRYPT);
+        $query = $connection->prepare("SELECT * FROM users WHERE email=:email");
+        $query->bindParam("email", $email, PDO::PARAM_STR);
+        $query->execute();
+        if ($query->rowCount() > 0) {
+            echo '<p class="error">Этот адрес уже зарегистрирован!</p>';
         }
-
+        if ($query->rowCount() == 0) {
+            $query = $connection->prepare("INSERT INTO users(username,password,email) VALUES (:username,:password_hash,:email)");
+            $query->bindParam("username", $username, PDO::PARAM_STR);
+            $query->bindParam("password_hash", $password_hash, PDO::PARAM_STR);
+            $query->bindParam("email", $email, PDO::PARAM_STR);
+            $result = $query->execute();
+            if ($result) {
+                echo '<p class="success">Регистрация прошла успешно!</p>';
+            } else {
+                echo '<p class="error">Неверные данные!</p>';
+            }
+        }
     }
-
-    // Insert records
-    if($isValid){
-        $insertSQL = "INSERT INTO users(nickname,password,email) values(?,?,?)";
-        $stmt = $con->prepare($insertSQL);
-        $stmt->bind_param("ssssss",$nickname, $password, $email);
-        $stmt->execute();
-        $stmt->close();
-
-        $success_message = "Account created successfully.";
-    }
-}
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<html>
+<body>
+<form method="post" action="" name="signup-form">
 <head>
-    <title>RVT</title>
+    <title>Регистрация</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="Admin/css/util.css">
-    <link rel="stylesheet" type="text/css" href="Admin/css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <!--===============================================================================================-->
 </head>
-<body>
-
+<form method="post" action="" name="signup-form">
 <div class="limiter">
     <div class="container-login100">
         <div class="wrap-login100 p-t-50 p-b-90">
             <form action="register.php" method="post" autocomplete="off" class="login100-form validate-form flex-sb flex-w">
-					<span class="login100-form-title p-b-51">
-						Registration
-					</span>
+                    <span class="login100-form-title p-b-51">
+                        Registration
+                    </span>
 
                 <div class="wrap-input100 validate-input m-b-16" data-validate = "Nickname is required">
-                    <input class="input100" type="text" name="nickname" placeholder="Nickname">
+                    <input class="input100" type="text" name="username" placeholder="Nickname" required/>
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-                    <input class="input100" type="password" name="password" placeholder="Password">
+                    <input class="input100" type="password" name="password" placeholder="Password" required/>
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input m-b-16" data-validate = "Email is required">
-                    <input class="input100" type="text" name="email" placeholder="Email">
+                    <input class="input100" type="text" name="email" placeholder="Email" required/>
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="container-login100-form-btn m-t-17">
-                    <button name="btnsignup" class="login100-form-btn">
+                    <button type="submit" name="register" value="register" class="login100-form-btn" href="">
                         Register
                     </button>
                 </div>

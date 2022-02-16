@@ -438,3 +438,21 @@ background-color: #FFFAF0;
 .elastic2 li.hide{
     display: none;
 }
+
+.rezNr {
+    font-size: 18px;
+    background-color: white;
+    color: #fff;
+    border-collapse: collapse;
+}
+
+.rezNr td {
+    padding: 10px;
+    border: 1px solid #fff;
+}
+
+.rezNr td[colspan="2"] {
+    font-weight: bold;
+    text-align: center;
+    background-color: #00887d;
+}

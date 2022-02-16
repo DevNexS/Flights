@@ -1,44 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+<body>
+<form method="GET" action="" name="signup-form">
 <head>
-    <title>RVT</title>
+    <title>Регистрация</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <!-- <link rel="stylesheet" type="text/css" href="Admin/css/util.css">
-    <link rel="stylesheet" type="text/css" href="Admin/css/main.css"> -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='Admin/css/util.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='Admin/css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="Admin/css/util.css">
+    <link rel="stylesheet" type="text/css" href="Admin/css/main.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Admin/CSS/util.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Admin/CSS/main.css') }}">
     <!--===============================================================================================-->
 </head>
-<body>
-
+<form method="GET" action="{{ url_for('static', filename='Admin/php/register.php') }}" name="signup-form">
 <div class="limiter">
     <div class="container-login100">
         <div class="wrap-login100 p-t-50 p-b-90">
-            <form class="login100-form validate-form flex-sb flex-w">
-					<span class="login100-form-title p-b-51">
-						Registration
-					</span>
+            <form action="register.php" method="GET" autocomplete="off" class="login100-form validate-form flex-sb flex-w">
+                    <span class="login100-form-title p-b-51">
+                        Registration
+                    </span>
 
                 <div class="wrap-input100 validate-input m-b-16" data-validate = "Nickname is required">
-                    <input class="input100" type="password" name="nickname" placeholder="Nickname">
-                    <span class="focus-input100"></span>
-                </div>
-
-
-                <div class="wrap-input100 validate-input m-b-16" data-validate = "Email is required">
-                    <input class="input100" type="text" name="email" placeholder="Email">
+                    <input class="input100" type="text" name="username" placeholder="Nickname" required/>
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-                    <input class="input100" type="text" name="password" placeholder="Password">
+                    <input class="input100" type="password" name="password" placeholder="Password" required/>
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-16" data-validate = "Email is required">
+                    <input class="input100" type="text" name="email" placeholder="Email" required/>
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="container-login100-form-btn m-t-17">
-                    <button class="login100-form-btn">
+                    <button type="submit" name="register" value="register" class="login100-form-btn">
                         Register
                     </button>
                 </div>
@@ -47,10 +46,7 @@
         </div>
     </div>
 </div>
-
-
 <div id="dropDownSelect1"></div>
-<script src="js/main.js"></script>
-
+<script src="static/Admin/js/main.js"></script>
 </body>
 </html>
