@@ -10,7 +10,7 @@ def index():
 def secondlpp():
     return render_template("secondlpp.html")
 
-@app.route('/login.php')
+@app.route('/login.html')
 def login():
     return render_template("static/php/login.php")
 
@@ -62,9 +62,9 @@ def settings():
 def panel():
     return render_template("panel.html")
 
-# @app.route('/Latvia.html')
-# def panel():
-#     return render_template("countries/Latvia.html")
+@app.route('/latvia.html')
+def latvia():
+    return render_template("countries/latvia.html")
 
 # @app.route('/Netherlands.html')
 # def panel():

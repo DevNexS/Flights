@@ -20,7 +20,7 @@ document.getElementById("wheretogo").onclick = function (){
     }
 }
 
-
+//сортировка 1-го поп-апа
 document.querySelector("#elastic").oninput = function (search){
   let val = this.value.trim();
   let elasticItems = document.querySelectorAll('.elastic li');
@@ -41,6 +41,7 @@ document.querySelector("#elastic").oninput = function (search){
   }
 }
 
+//сортировка 2-го поп-апа
 document.querySelector("#wheretogo").oninput = function (search){
   let val = this.value.trim();
   let elasticItems = document.querySelectorAll('.elastic2 li');
@@ -61,6 +62,7 @@ document.querySelector("#wheretogo").oninput = function (search){
   }
 }
 
+//вписывание слов в input
 function insert (word) {
     let inp = document.querySelector('#elastic');
     let start = inp.selectionStart;
@@ -70,6 +72,7 @@ function insert (word) {
       inp.setSelectionRange(start, start + word.length)
   }
 
+//вписывание слов в input
 function insert2 (word) {
     let inp = document.querySelector('#wheretogo');
     let start = inp.selectionStart;
@@ -79,6 +82,7 @@ function insert2 (word) {
       inp.setSelectionRange(start, start + word.length)     
 }
 
+//меняет местами значения input-ов
 document.getElementById("switch").onclick = function (){
     [
       document.getElementById("elastic").value,
@@ -87,4 +91,35 @@ document.getElementById("switch").onclick = function (){
       document.getElementById("wheretogo").value,
       document.getElementById("elastic").value
     ];
-  };
+};
+
+
+var expr = document.getElementById("findbutton").onclick = function() {
+switch (expr) {
+    case "Латвия(LV)":
+      window.location.href = 'countries/Latvia.html-url' ;
+      break;
+    case "Испания(S)":
+      window.location.href = 'countries/Spain.html-url' ;
+      break;
+    case "США(US)":
+      window.location.href = 'countries/USA.html-url';
+      break;
+    case "Нидерланды(NL)":
+      window.location.href = 'countries/Netherlands.html-url';
+      break;
+    case "Норвегия(NO)":
+      window.location.href = 'countries/Norway.html-url';
+      break;
+    case "Румыния(RO)":
+      window.location.href = 'countries/Romania.html-url';
+      break;
+    case "Россия(RU)":
+      window.location.href = 'countries/Russia.html-url';
+      break;
+    default:
+      console.log("Sorry, we are out of " + expr + ".");
+  }
+  
+  console.log("Is there anything else you'd like?");
+}
