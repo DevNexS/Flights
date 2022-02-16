@@ -456,3 +456,9 @@ background-color: #FFFAF0;
     text-align: center;
     background-color: #00887d;
 }
+
+.countryBtn {
+    border: none; 
+    outline: none;
+    background: none;
+}

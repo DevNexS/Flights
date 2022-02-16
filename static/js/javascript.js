@@ -60,3 +60,31 @@ document.querySelector("#wheretogo").oninput = function (search){
       });
   }
 }
+
+function insert (word) {
+    let inp = document.querySelector('#elastic');
+    let start = inp.selectionStart;
+    inp.value = inp.value.substring(0, start) + word +
+      inp.value.substring(inp.selectionEnd, inp.value.length) 
+      inp.focus();
+      inp.setSelectionRange(start, start + word.length)
+  }
+
+function insert2 (word) {
+    let inp = document.querySelector('#wheretogo');
+    let start = inp.selectionStart;
+    inp.value = inp.value.substring(0, start) + word +
+      inp.value.substring(inp.selectionEnd, inp.value.length) 
+      inp.focus();
+      inp.setSelectionRange(start, start + word.length)     
+}
+
+document.getElementById("switch").onclick = function (){
+    [
+      document.getElementById("elastic").value,
+      document.getElementById("wheretogo").value
+    ] = [
+      document.getElementById("wheretogo").value,
+      document.getElementById("elastic").value
+    ];
+  };
