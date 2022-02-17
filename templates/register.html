@@ -1,6 +1,6 @@
 <html>
 <body>
-<form method="GET" action="" name="signup-form">
+<form method="post" action="" name="signup-form">
 <head>
     <title>Регистрация</title>
     <meta charset="UTF-8">
@@ -47,6 +47,6 @@
     </div>
 </div>
 <div id="dropDownSelect1"></div>
-<script src="static/Admin/js/main.js"></script>
+<script src="{{ url_for('static', filename='Admin/js/main.js') }}"></script>
 </body>
 </html>

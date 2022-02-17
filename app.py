@@ -10,13 +10,13 @@ def index():
 def secondlpp():
     return render_template("secondlpp.html")
 
-@app.route('/login.php')
+@app.route('/login.html')
 def login():
-    return render_template("static/php/login.php")
+    return render_template("login.html")
 
-@app.route('/register.php')
+@app.route('/register.html')
 def register():
-    return render_template("static/php/register.php")
+    return render_template("register.html")
 
 @app.route('/reservation.html')
 def reservation():
