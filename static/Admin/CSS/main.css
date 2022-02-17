@@ -324,6 +324,14 @@ iframe {
   flex-wrap: wrap;
 }
 
+.a-login {
+  font-family: Ubuntu-Bold;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
 .login100-form-btn {
   font-family: Ubuntu-Bold;
   font-size: 16px;
