@@ -67,7 +67,7 @@
             <!--== LEFT MENU ==-->
             <div class="sb2-13">
                 <ul class="collapsible" data-collapsible="accordion">
-                    <li><a href="index.html" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Панель</a>
+                    <li><a href="index.html" class="collapsible-header"><i class="fa fa-bar-chart" aria-hidden="true"></i> Панель</a>
                     </li>
                     <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i> Пользователи</a>
                         <div class="collapsible-body left-sub-menu">
@@ -178,7 +178,7 @@
                                                     <td>{{ task.vietu_skaits }}</td>
                                                     <td>{{ task.date_created.date() }}</td>
                                                     <td>
-                                                        <a href="/delete/{{task.id}}">Delete</a>
+                                                        <a class ="label udalit" href="/delete/{{task.id}}">Delete</a>
                                                         <br>
                                                         <a href="/update/{{task.id}}">Update</a>
                                                     </td>
@@ -186,13 +186,13 @@
                                             {% endfor %}
                                         </table>
                                         <div class="form">
-                                            <form action="/panelPlanes.html" method="POST">
-                                                <input type="text" name="content" class="input2" id="content" required>
-                                                <input type="text" name="modelis" id="modelis" required>
-                                                <input type="text" name="razosanas_gads" id="razosanas_gads" required>
-                                                <input type="text" name="vietu_skaits" id="vietu_skaits" required>
-                                                <input type="text" name="date_created.date()" id="date_created.date()" required>
-                                                <input type="submit" value="Добавить">
+                                            <form class=".app-search input" action="/panelPlanes.html" method="POST">
+                                                <input type="text" name="content" class="input1" id="content" required>
+                                                <input type="text" name="modelis" class="input1" id="modelis" required>
+                                                <input type="text" name="razosanas_gads" class="input1" id="razosanas_gads" required>
+                                                <input type="text" name="vietu_skaits" class="input1" id="vietu_skaits" required>
+                                                <input type="text" name="date_created.date()" class="input1" id="date_created.date()" required>
+                                                <span class="label"><input type="submit" class="dobavit"  value="Добавить"></span>
                                             </form>
                                         </div>
                                 </div>
