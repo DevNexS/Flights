@@ -1101,7 +1101,11 @@ a:hover {
 .ad-hom-col-4{
     background: #da0c4d;
 }
-.ad-hom-col-1 i{}
+/* .ad-hom-col-1 i{}
 .ad-hom-col-2 i{}
 .ad-hom-col-3 i{}
-.ad-hom-col-4 i{}
+.ad-hom-col-4 i{} */
+
+.input2{
+    width: 100px;
+}

@@ -1,0 +1,10 @@
+<div class="content">
+    <h1 style="margin-left: 0px; margin-top: 150px;">Atjaunināt informāciju</h1>
+    <form action="/update/{{task.id}}" method="POST" style="margin-left: 20px;">
+      <input type="text" name="content" id="content" value="{{task.content}}" placeholder="Darbības joma">
+      <input type="text" name="modelis" id="modelis" value="{{task.modelis}}" placeholder="Vārds, Uzvārds">
+      <input type="text" name="razosanas_gads" id="razosanas_gads" value="{{task.razosanas_gads}}" placeholder="Darba laiks">
+      <input type="text" name="vietu_skaits" id="vietu_skaits" value="{{task.vietu_skaits}}" placeholder="Darba laiks">
+      <input type="submit" value="Ieviest izmaiņas" class="button" style="margin-left: -55px;">
+    </form>
+</div>

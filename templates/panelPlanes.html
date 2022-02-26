@@ -153,27 +153,24 @@
                 <div class="row">
             <!--== User Details ==-->
             <div class="sb2-2-3">
-                <!-- <div class="row">
+                <div class="row">
                     <div class="col-md-12">
                         <div class="box-inn-sp">
-                            <div class="inn-title"> -->
+                            <div class="inn-title">
                                 <h4>Информация о последних пользователях</h4>
                             </div>
                             <div class="tab-inn">
                                 <div class="table-responsive table-desi">
-                                    <table class="table table-hover">
-                                        <thead>
-                                        <tr>
-                                            <th>Ник</th>
-                                            <th>Имя</th>
-                                            <th>Телефон</th>
-                                            <th>Почта</th>
-                                            <th>Страна</th>
-                                            <th>Кол-во полетов</th>
-                                            <th>Действие</th>
-                                        </tr>
-                                        </thead>
-                                        {% for task in tasks %}
+                                        <table>
+                                            <tr>
+                                                <th>Ник</th>
+                                                <th>Модель</th>
+                                                <th>Год создания</th>
+                                                <th>Кол.-во мест</th>
+                                                <th>Число</th>
+                                                <th>Действие</th>
+                                            </tr>
+                                            {% for task in tasks %}
                                                 <tr>
                                                     <td>{{ task.content }}</td>
                                                     <td>{{ task.modelis }}</td>
@@ -187,7 +184,17 @@
                                                     </td>
                                                 </tr>
                                             {% endfor %}
-                                    </table>
+                                        </table>
+                                        <div class="form">
+                                            <form action="/panelPlanes.html" method="POST">
+                                                <input type="text" name="content" class="input2" id="content" required>
+                                                <input type="text" name="modelis" id="modelis" required>
+                                                <input type="text" name="razosanas_gads" id="razosanas_gads" required>
+                                                <input type="text" name="vietu_skaits" id="vietu_skaits" required>
+                                                <input type="text" name="date_created.date()" id="date_created.date()" required>
+                                                <input type="submit" value="Add Task">
+                                            </form>
+                                        </div>
                                 </div>
                             </div>
                         </div>

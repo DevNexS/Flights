@@ -1,6 +1,84 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, request, redirect, url_for
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
-app = Flask('app')
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+db = SQLAlchemy(app)
+
+class Lidosta(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    content = db.Column(db.String(200), nullable=False)
+    saisinajums = db.Column(db.String(3), nullable=False)
+    adrese = db.Column(db.String(200), nullable=False)
+    date_created = db.Column(db.DateTime, default=datetime.utcnow)
+
+    def __repr__(self):
+        return 'Task %r' % self.id
+
+class Rezervacija(db.Model):
+  id = db.Column(db.Integer, primary_key=True)
+  nolidostas = db.Column(db.String(200), nullable=False)
+  uzlidostas = db.Column(db.String(200), nullable=False)
+  datumsno = db.Column(db.String(200), nullable=False)
+
+  def __repr__(self):
+        return 'Rezervacija %r' % self.id
+
+class Lidmasina(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    content = db.Column(db.String(200), nullable=False)
+    modelis = db.Column(db.String(200), nullable=False)
+    razosanas_gads = db.Column(db.String(3), nullable=False)
+    vietu_skaits = db.Column(db.String(200), nullable=False)
+    date_created = db.Column(db.DateTime, default=datetime.utcnow)
+
+    def __repr__(self):
+        return 'Lidmasina %r' % self.id
+
+@app.route('/panelPlanes.html', methods=['POST', 'GET'])
+def lidmasina():
+    if request.method == 'POST':
+      new_lidmasina = Lidmasina(content=request.form['content'],modelis=request.form['modelis'], razosanas_gads=request.form['razosanas_gads'], vietu_skaits=request.form['vietu_skaits'])
+      try:
+        db.session.add(new_lidmasina)
+        db.session.commit()
+        return redirect('/panelPlanes.html')
+      except:
+        return "error"
+    else:
+      tasks = Lidmasina.query.order_by(Lidmasina.date_created).all()
+      return render_template('/panelPlanes.html', tasks=tasks)
+
+@app.route('/delete/<int:id>')
+def delete_plane(id):
+    task_to_delete = Lidmasina.query.get_or_404(id)
+    try:
+        db.session.delete(task_to_delete)
+        db.session.commit()
+        return redirect('/panelPlanes.html')
+    except:
+        return "error"
+
+@app.route('/update/<int:id>', methods=['GET', 'POST'])
+def update(id):
+    task = Lidmasina.query.get_or_404(id)
+
+    if request.method == 'POST':
+        task.content = request.form['content']
+        task.modelis = request.form['modelis']
+        task.razosanas_gads = request.form['razosanas_gads']
+        task.vietu_skaits = request.form['vietu_skaits']
+
+        try:
+            db.session.commit()
+            return redirect('/panelPlanes.html')
+        except:
+            return 'There was an issue updating your task'
+
+    else:
+        return render_template('panelPlanesUpdate.html', task=task)
 
 @app.route('/')
 def index():
@@ -62,6 +140,13 @@ def settings():
 def panel():
     return render_template("panel.html")
 
+@app.route('/panelPlanes.html')
+def panelPlanes():
+    return render_template("panelPlanes.html")
+
+@app.route('/panelPlanesUpadte.html')
+def panelPlanesUpadte():
+    return render_template("panelPlanesUpadte.html")
 @app.route('/latvia.html')
 def latvia():
     return render_template("countries/latvia.html")
