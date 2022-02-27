@@ -44,7 +44,7 @@
         <!--== MY ACCCOUNT ==-->
         <div class="col-md-2 col-sm-3 col-xs-6">
             <!-- Dropdown Trigger -->
-            <a class='waves-effect dropdown-button top-user-pro' href='/' data-activates='top-menu'>Выход<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <a class='waves-effect dropdown-button top-user-pro' href="{{ url_for('logout') }}" data-activates='top-menu'>Выход<i class="fa fa-angle-down" aria-hidden="true"></i></a>
         </div>
     </div>
 </div>
@@ -59,7 +59,7 @@
                     <li><img src="images/icons/account_logo.jpeg" alt="">
                     </li>
                     <li>
-                        <h5>DevNex <span> Riga, LV</span></h5>
+                        <h5>{{ name }} <span> Riga, LV</span></h5>
                     </li>
                     <li></li>
                 </ul>

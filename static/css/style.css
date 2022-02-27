@@ -1,11 +1,12 @@
 body {
     color: #111236;
     width: 100%;    
-    height: 100%;
+    height: 30%;
     display: inline;
     font-family: "Skyscanner Relative",-apple-system,BlinkMacSystemFont,"Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
     font-size: 1rem;
     line-height: 1.3rem;
+    background-color: #DCE0E3;
 }
 
 .findform {
@@ -492,9 +493,7 @@ background-color: #FFFAF0;
     top: 0px;
     background: #000030;
   }
-  .forgot {
-    font-size: 12px;
-}
+
   #miniVirsraksts {
     position: absolute;
     left: 130px;
@@ -597,6 +596,7 @@ background-color: #FFFAF0;
   
   .forgot {
     font-size: 12px;
+    margin-left: 150px;
   }
   
   .admin {
@@ -684,3 +684,37 @@ background-color: #FFFAF0;
     border-radius: 30px;
     user-select: none;
 }
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+  }
+  .form-signin .form-signin-heading,
+  .form-signin .checkbox {
+    margin-bottom: 10px;
+  }
+  .form-signin .checkbox {
+    font-weight: normal;
+  }
+  .form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }

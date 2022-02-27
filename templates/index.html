@@ -1,6 +1,5 @@
-{% extends "bootstrap/base.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
 <!DOCTYPE html>
+{% import "bootstrap/wtf.html" as wtf %}
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +9,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
     <link rel="shortcut icon" href="https://img.icons8.com/color/2x/american-airlines.png">
-
     <title>Ceļot prieks</title>
 </head>
 <body>
@@ -30,34 +28,23 @@
             <span class="aviabutton">Авиабилеты</span>
         </a>
     </div>
-    <div id="popUp" style="display: block;">
+    <div id="popUp" style="display: none;">
         <div class="form-box">
           <div class="miniAugsa">
             <img onclick="net()" class="exitcrest" id="iziet" src="/static/icons/crest.png" alt="iziet">
             <h2 id="miniVirsraksts">Ceļot prieks</h2>
           </div>
-          <div class="button-box">
-            <div id="btn" style="left: 0px;"></div>
-            <button type="button" class="toggle-btn" onclick="login()">Log In</button>
-            <button type="button" class="toggle-btn" onclick="register()">Register</button>
-          </div>
-          <form id="login" class="input-group" style="left: 50px;" method="POST" action="/index.html">
+          <form id="signin" class="input-group" style="left: 50px;" method="POST" action="/">
             {{ form.hidden_tag() }}
             {{ wtf.form_field(form.username) }}
             {{ wtf.form_field(form.password) }}
             {{ wtf.form_field(form.remember) }}
-            <input type="email" class="input-field" placeholder="E-pasts" required="">
-            <input type="password" class="input-field" placeholder="Parole" required="">
-            <input type="checkbox" class="check-box"><span class="forgot">Remember Password</span>
-            <button type="submit" class="submit-btn">Login</button>
+            <button type="submit" class="submit-btn">Войти</button>
           </form>
-          <form id="register" class="input-group" style="left: 450px;">
-            <input type="email" class="input-field" placeholder="E-pasts" id="userInputUN" required="">
-            <input type="password" class="input-field" placeholder="Parole" id="userInputPass" required="">
-            <input type="checkbox" class="check-box" required="">
-            <div class="piekritNoteikumiem">Reģistrējoties Jūs piekrītat Ceļot prieks konfidencialitātes politikai un lietošanas noteikumiem</div>
-            <button type="submit" class="submit-btn">Register</button>
-          </form>
+          <form>    
+            <span class="forgot">или</span>
+            <button type="submit" class="submit-btn" href="/register.html">Регистрация</button>
+          </form>          
         </div>
       </div>
     <div class="foto" style="background-image:url(https://content.skyscnr.com/m/785bdfcbe683606c/Large-Flights-hero-2.jpg?crop=1800px:1375px&amp;quality=60)">
