@@ -7,7 +7,8 @@ from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import InputRequired, Email, Length
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
-
+from flask_admin import Admin
+from flask_admin.contrib.sqla import ModelView
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
@@ -18,6 +19,7 @@ Bootstrap(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = '/'
+login = LoginManager(app)
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -205,7 +207,7 @@ def panelPlanes():
 @app.route('/panelPlanesUpadte.html')
 def panelPlanesUpadte():
     return render_template("panelPlanesUpadte.html")
-    
+
 @app.route('/latvia.html')
 def latvia():
     return render_template("countries/latvia.html")
@@ -233,6 +235,28 @@ def spain():
 @app.route('/USA.html')
 def usa():
     return render_template("countries/USA.html")
+
+@login.user_loader
+def load_user(user_id):
+    return User.query.get(user_id)
+
+class MyModelView(ModelView):
+    def is_accessible(self):
+        return current_user.is_authenticated
+
+    def is_inaccessible(self, name, **kwargs):
+        return redirect(url_for('panel'))
+
+admin = Admin(app)
+admin.add_view(MyModelView(User, db.session))
+admin.add_view(MyModelView(Lidmasina, db.session))
+admin.add_view(MyModelView(Lidosta, db.session))
+
+@app.route('/login')
+def login():
+    user = User.query.get(2)
+    login_user(user)
+    return 'Logged in!'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
