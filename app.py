@@ -72,6 +72,19 @@ def index():
     
     return render_template("index.html", form=form)
 
+    if request.method == 'POST':
+      lidosta = Lidosta(content=request.form['content'])
+      try:
+        db.session.add(lidosta)
+        db.session.commit()
+        return redirect('/')
+      except:
+        return "error"
+    else:
+      lidostas = Lidosta.query.order_by(Lidosta.date_created).all()
+      return render_template('/', lidostas=lidostas)
+
+
 class Lidosta(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(200), nullable=False)
@@ -80,7 +93,7 @@ class Lidosta(db.Model):
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
-        return 'Task %r' % self.id
+        return 'Lidosta %r' % self.id
 
 class Rezervacija(db.Model):
   id = db.Column(db.Integer, primary_key=True)
@@ -192,7 +205,7 @@ def settings():
 @app.route('/panel.html')
 @login_required
 def panel():
-    return render_template("panel.html", name=current_user.username)
+    return render_template("panel.html", name=current_user.username, email=current_user.email)
 
 @app.route('/logout')
 @login_required

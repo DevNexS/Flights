@@ -31,7 +31,7 @@
     <div class="row">
         <!--== LOGO ==-->
         <div class="col-md-2 col-sm-3 col-xs-6 sb1-1">
-            <a href="index.html" class="logo"><img src="images/logo1.png" alt="" />
+            <a href="panel.html" class="logo"><img src="images/logo1.png" alt="" />
             </a>
         </div>
         <!--== SEARCH ==-->
@@ -67,7 +67,7 @@
             <!--== LEFT MENU ==-->
             <div class="sb2-13">
                 <ul class="collapsible" data-collapsible="accordion">
-                    <li><a href="index.html" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Панель</a>
+                    <li><a href="panel.html" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Панель</a>
                     </li>
                     <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i> Пользователи</a>
                         <div class="collapsible-body left-sub-menu">
@@ -87,7 +87,7 @@
                         <div class="collapsible-body left-sub-menu">
                         </div>
                     </li>
-                    <li><a href="panelPlanes.html" class="menu-active"><i class="fa fa-umbrella" aria-hidden="true"></i> Самолеты</a>
+                    <li><a href="panelPlanes.html" class="collapsible-header"><i class="fa fa-umbrella" aria-hidden="true"></i> Самолеты</a>
                         <div class="collapsible-body left-sub-menu">
                         </div>
                     </li>   
@@ -153,10 +153,10 @@
                 <div class="row">
             <!--== User Details ==-->
             <div class="sb2-2-3">
-                <!-- <div class="row">
+                <div class="row">
                     <div class="col-md-12">
                         <div class="box-inn-sp">
-                            <div class="inn-title"> -->
+                            <div class="inn-title">
                                 <h4>Информация о последних пользователях</h4>
                             </div>
                             <div class="tab-inn">
@@ -165,28 +165,13 @@
                                         <thead>
                                         <tr>
                                             <th>Ник</th>
-                                            <th>Имя</th>
-                                            <th>Телефон</th>
                                             <th>Почта</th>
-                                            <th>Страна</th>
-                                            <th>Кол-во полетов</th>
-                                            <th>Действие</th>
                                         </tr>
                                         </thead>
-                                        {% for task in tasks %}
                                                 <tr>
-                                                    <td>{{ task.content }}</td>
-                                                    <td>{{ task.modelis }}</td>
-                                                    <td>{{ task.razosanas_gads }}</td>
-                                                    <td>{{ task.vietu_skaits }}</td>
-                                                    <td>{{ task.date_created.date() }}</td>
-                                                    <td>
-                                                        <a href="/delete/{{task.id}}">Delete</a>
-                                                        <br>
-                                                        <a href="/update/{{task.id}}">Update</a>
-                                                    </td>
+                                                    <td>{{ name }}</td>
+                                                    <td>{{ email }}</td>
                                                 </tr>
-                                            {% endfor %}
                                     </table>
                                 </div>
                             </div>
