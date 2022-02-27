@@ -1,11 +1,36 @@
 from flask import Flask, render_template, request, redirect, url_for
+from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
+from flask_wtf import FlaskForm 
 from datetime import datetime
+from wtforms import StringField, PasswordField, BooleanField
+from wtforms.validators import InputRequired, Email, Length
+
+
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+app.config['SECRET_KEY'] = 'Thisisasecret!'
 db = SQLAlchemy(app)
+Bootstrap(app)
+
+class LoginForm(FlaskForm):
+    username = StringField('username', validators=[InputRequired(),Length(min=4, max=15)])
+    password = StringField('password', validators=[InputRequired(), Length(min=6, max=80)])
+    remember = BooleanField('remember me')
+
+class RegisterForm(FlaskForm):
+    email = StringField('email', validators=[InputRequired(), Email(message='Invalid email'), Length(max=50)])
+    username = StringField('username', validators=[InputRequired(),Length(min=4, max=15)])
+    password = StringField('password', validators=[InputRequired(), Length(min=6, max=80)])
+
+@app.route('/')
+def index():
+    form = LoginForm()
+    form = RegisterForm()
+
+    return render_template("index.html", form=form)
 
 class Lidosta(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -80,17 +105,9 @@ def update(id):
     else:
         return render_template('panelPlanesUpdate.html', task=task)
 
-@app.route('/')
-def index():
-    return render_template("index.html")
-
 @app.route('/secondlpp.html')
 def secondlpp():
     return render_template("secondlpp.html")
-
-@app.route('/login.html')
-def login():
-    return render_template("login.html")
 
 @app.route('/register.html')
 def register():
@@ -175,4 +192,10 @@ def spain():
 def usa():
     return render_template("countries/USA.html")
 
-app.run(host='0.0.0.0', port=8080)
+@app.errorhandler(404)
+def page_not_found(e):
+    # note that we set the 404 status explicitly
+    return render_template('404.html'), 404
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080)

@@ -1,3 +1,5 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -28,7 +30,7 @@
             <span class="aviabutton">Авиабилеты</span>
         </a>
     </div>
-    <div id="popUp" style="display: none;">
+    <div id="popUp" style="display: block;">
         <div class="form-box">
           <div class="miniAugsa">
             <img onclick="net()" class="exitcrest" id="iziet" src="/static/icons/crest.png" alt="iziet">
@@ -39,7 +41,11 @@
             <button type="button" class="toggle-btn" onclick="login()">Log In</button>
             <button type="button" class="toggle-btn" onclick="register()">Register</button>
           </div>
-          <form id="login" class="input-group" style="left: 50px;">
+          <form id="login" class="input-group" style="left: 50px;" method="POST" action="/index.html">
+            {{ form.hidden_tag() }}
+            {{ wtf.form_field(form.username) }}
+            {{ wtf.form_field(form.password) }}
+            {{ wtf.form_field(form.remember) }}
             <input type="email" class="input-field" placeholder="E-pasts" required="">
             <input type="password" class="input-field" placeholder="Parole" required="">
             <input type="checkbox" class="check-box"><span class="forgot">Remember Password</span>
