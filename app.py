@@ -205,6 +205,7 @@ def panelPlanes():
 @app.route('/panelPlanesUpadte.html')
 def panelPlanesUpadte():
     return render_template("panelPlanesUpadte.html")
+    
 @app.route('/latvia.html')
 def latvia():
     return render_template("countries/latvia.html")
