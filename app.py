@@ -73,7 +73,7 @@ def index():
     
     if request.method == 'POST':
         lidosta = Lidosta(content=request.form['content'])
-        new_rezervacija = Rezervacija(nolidostas=request.form['nolidostas'],uzlidostas=request.form['uzlidostas'], datumsno=request.form['datumsno'])
+        new_rezervacija = Rezervacija(nolidostas=request.form['nokuriene'],uzlidostas=request.form['wheretogo'], datepick=request.form['datepick'])
         try:
             db.session.add(lidosta)
             db.session.add(new_rezervacija)
@@ -87,6 +87,16 @@ def index():
         
     return render_template('index.html', lidostas=lidostas, form=form, tasks=tasks)
 
+class Reis(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    datums = db.Column(db.String(200), nullable=False)
+    laiks = db.Column(db.String(200), nullable=False)
+    nokuriene = db.Column(db.String(200), nullable=False)
+    wheretogo = db.Column(db.String(200), nullable=False)
+    date_created = db.Column(db.DateTime, default=datetime.utcnow)
+
+    def __repr__(self):
+        return 'Reis %r' % self.id
 
 class Lidosta(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -130,7 +140,7 @@ def lidmasina():
         return "error"
     else:
       tasks = Lidmasina.query.order_by(Lidmasina.date_created).all()
-      return render_template('/panelPlanes.html', tasks=tasks)
+      return render_template('/panelPlanes.html', tasks=tasks, name=current_user.username)
 
 @app.route('/delete/<int:id>')
 def delete_plane(id):
@@ -163,6 +173,16 @@ def update(id):
 
 @app.route('/secondlpp.html')
 def secondlpp():
+    if request.method == 'POST':
+        new_reis = Reis(datums=request.form['datums'], laiks=request.form['laiks'], nokuriene=request.form['nokuriene'], wheretogo=request.form['wheretogo'])
+        try:
+            db.session.add(new_reis)
+            db.session.commit()
+            return redirect('/secondlpp.html')
+        except:
+            return "error"
+    else:
+        tasks = Reis.query.order_by(Reis.date_created).all()
     return render_template("secondlpp.html")
 
 @app.route('/reservation.html')
@@ -267,10 +287,11 @@ admin = Admin(app)
 admin.add_view(MyModelView(User, db.session))
 admin.add_view(MyModelView(Lidmasina, db.session))
 admin.add_view(MyModelView(Lidosta, db.session))
+admin.add_view(MyModelView(Reis, db.session))
 
 @app.route('/login')
 def login():
-    user = User.query.get(2)
+    user = User.query.get(1)
     login_user(user)
     return 'Logged in!'
 
