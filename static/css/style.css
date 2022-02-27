@@ -201,7 +201,7 @@ body {
     padding: .375rem .75rem;
     border: .0625rem solid #b2b2bf;
     background: #fff;
-    width: 160px;
+    width: 320px;
     color: #111236;
     left: 485px;
     top: 65px;
@@ -359,7 +359,7 @@ body {
 }
 
 #start {
-    width: 125px;
+    width: 290px;
     border: none;
     outline: none;
 }

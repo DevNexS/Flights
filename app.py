@@ -57,6 +57,7 @@ class RegisterForm(FlaskForm):
     password = StringField('password', validators=[InputRequired(), Length(min=6, max=80)])
 
 @app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
     form = LoginForm()
     
@@ -70,19 +71,21 @@ def index():
         return '<h1>Invalid username or password</h1>' 
         # return '<h1>' + form.username.data + ' ' + form.password.data + '</h1>'
     
-    return render_template("index.html", form=form)
-
     if request.method == 'POST':
-      lidosta = Lidosta(content=request.form['content'])
-      try:
-        db.session.add(lidosta)
-        db.session.commit()
-        return redirect('/')
-      except:
-        return "error"
+        lidosta = Lidosta(content=request.form['content'])
+        new_rezervacija = Rezervacija(nolidostas=request.form['nolidostas'],uzlidostas=request.form['uzlidostas'], datumsno=request.form['datumsno'])
+        try:
+            db.session.add(lidosta)
+            db.session.add(new_rezervacija)
+            db.session.commit()
+            return redirect('/')
+        except:
+            return "error"
     else:
-      lidostas = Lidosta.query.order_by(Lidosta.date_created).all()
-      return render_template('/', lidostas=lidostas)
+        lidostas = Lidosta.query.order_by(Lidosta.date_created).all()
+        tasks = Rezervacija.query.order_by(Rezervacija.id).all()
+        
+    return render_template('index.html', lidostas=lidostas, form=form, tasks=tasks)
 
 
 class Lidosta(db.Model):
@@ -94,7 +97,7 @@ class Lidosta(db.Model):
 
     def __repr__(self):
         return 'Lidosta %r' % self.id
-
+    
 class Rezervacija(db.Model):
   id = db.Column(db.Integer, primary_key=True)
   nolidostas = db.Column(db.String(200), nullable=False)

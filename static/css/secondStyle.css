@@ -219,3 +219,238 @@ a {
     text-decoration: none;
     color: #0770e3;
 }
+.infoBilete {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.01px;
+    text-transform: uppercase;
+    color: #000000;
+  }
+
+  .fons {
+    position: absolute;
+    left: 9.79%;
+    right: 9.86%;
+    top: 17.27%;
+    bottom: 64.43%;
+    width: 1542.67px;
+    height: 166.64px;
+    background: #ffffff;
+    border-radius: 10px;
+  }
+
+  .reisaNumurs {
+    position: absolute;
+    left: 2.42%;
+    right: 89.37%;
+    top: 7.59%;
+    bottom: 81.01%;
+    font-size: 16px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.01px;
+    color: #898181;
+  }
+  #ilgums {
+    position: absolute;
+    left: 42.39%;
+    right: 48.92%;
+    top: 74.44%;
+    bottom: 17.76%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+  }
+  #atiesanasLaiks {
+    position: absolute;
+    left: 24.96%;
+    right: 70.76%;
+    top: 26.32%;
+    bottom: 51.48%;
+  }
+
+  #ielidosanasLaiks {
+    position: absolute;
+    left: 65.6%;
+    right: 30.45%;
+    top: 30.52%;
+    bottom: 55.08%;
+  }
+
+  .miniVirsraksts {
+    position: absolute;
+    left: 3.75%;
+    right: 84.26%;
+    top: 12.07%;
+    bottom: 83.17%;
+    font-weight: normal;
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+  }
+  
+  #vards1 {
+    position: absolute;
+    left: 3.46%;
+    right: 92.9%;
+    top: 28.21%;
+    bottom: 66.76%;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+  }
+  
+  #vards {
+    position: absolute;
+    left: 3.46%;
+    right: 72.29%;
+    top: 35.75%;
+    bottom: 53.07%;
+    width: 373.33px;
+    height: 42.19px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding-left: 20px;
+    outline: none;
+  }
+  
+  #uzvards1 {
+    position: absolute;
+    left: 3.46%;
+    right: 91.26%;
+    top: 58.1%;
+    bottom: 36.87%;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+  }
+  
+  #uzvards {
+    position: absolute;
+    left: 3.46%;
+    right: 72.29%;
+    top: 66.2%;
+    bottom: 22.63%;
+    width: 373.33px;
+    height: 42.19px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding-left: 20px;
+    outline: none;
+  }
+  
+  #vecums1 {
+    position: absolute;
+    left: 32.21%;
+    top: 28.21%;
+    bottom: 66.76%;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+  }
+  
+  #vecums {
+    position: absolute;
+    left: 32.21%;
+    right: 61.3%;
+    top: 35.75%;
+    bottom: 53.07%;
+    width: 373.33px;
+    height: 42.19px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding-left: 20px;
+    outline: none;
+  }
+  
+  #dzimums1 {
+    position: absolute;
+    left: 32.21%;
+    right: 61.3%;
+    top: 58.1%;
+    bottom: 36.87%;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+  }
+  
+  #dzimums {
+    position: absolute;
+    left: 32.21%;
+    right: 43.55%;
+    top: 66.2%;
+    bottom: 22.63%;
+    width: 373.33px;
+    height: 42.19px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding-left: 20px;
+    outline: none;
+  }
+  
+  #tautiba1 {
+    position: absolute;
+    left: 60.26%;
+    right: 33.77%;
+    top: 28.21%;
+    bottom: 66.76%;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+  }
+  
+  #tautiba {
+    position: absolute;
+    left: 60.26%;
+    right: 15.5%;
+    top: 35.2%;
+    bottom: 53.63%;
+    width: 373.33px;
+    height: 42.19px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding-left: 20px;
+    outline: none;
+  }
+  .pasazieris {
+    position: absolute;
+    left: 9.93%;
+    right: 9.86%;
+    top: 41.6%;
+    bottom: 16.92%;
+    width: 1540px;
+    height: 377.58px;
+    background: #ffffff;
+    border-radius: 10px;
+  }

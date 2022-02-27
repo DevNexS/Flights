@@ -25,30 +25,53 @@
             <span class="aviabutton">Авиабилеты</span>
         </a>
     </div>
+
+
     <div class="menu">
         <p class="flightArea">Латвия (LV) - Испания(S)</p>
         <p class="ticketForm">1 взрослый | Эконом</p>
     </div>
     <div class="line"></div>
-    <div class="order">
-        <div class="order2">
-            <p id="avstrija">Испания</p>
-            <button class="moreBtn moreBtn2" alt="Больше" id="showHide"></button>
-                <div id="popUpInfo">
-                    <div class="country">
-                        <p><img class="venasPhoto" src="https://bolerotour.ru/upload/pl_plugin_8/vena-5_5aa1c5a34cccc.jpg" alt="Вена" width="200px"></p>
-                        <p class="name">Мадрид</p>
-                        <p class="quantityOfTransfers">1 и более пересадок</p>
-                        <p class="price">Цена: 700$</p>
-                            <div class="line1"></div>
-                        <p class="guide"><a href="http://selfguide.ru/ispania/madrid-travel-guide/">Мадрид: путеводитель</a></p>
-                            <div class="line2"></div>
-                        <p class="reservation"><a href="reservation.html">Резервировать</a></p>
-                        <button class="buyBtn">Купить</button>
-                    </div>
-                </div>
-        </div>
-    </div>
+            <div class="fons">
+                <span id="reisaNumursTeksts" class="reisaNumurs">Reisa numurs:</span>
+                <span id="reisaNumurs" class="reisaNumurs">FR1976</span>
+                {% for rezervacija in rezervacija %}
+                <h id="dati" class="infoBilete">
+                  <option value="{{rezervacija.nolidostas}}">{{ rezervacija.nolidostas }}</option>
+                </h>
+                <h id="ielidosanasPilseta" class="infoBilete">
+                  <option value="{{rezervacija.uzlidostas}}">{{ rezervacija.uzlidostas }}</option>
+                </h>
+                 <h id="atiesanasDatums" class="infoBilete">
+                  <option value="{{rezervacija.datumsno}}">{{ rezervacija.datumsno }}</option>
+                </h>
+                {% endfor %}
+                <span id="ilgums">Ilgums 1h 50min</span>
+                <span id="atiesanasLaiks" class="infoBilete">19.55</span>
+                <span id="ielidosanasLaiks" class="infoBilete">22.00</span>
+                <span id="biletesCena" class="infoBilete"></span>
+            </div>
+            <div class="pasazieris">
+              <h1 class="miniVirsraksts">Pasažieris</h1>
+              <h2 id="vards1">Vārds</h2>
+              <h2 id="uzvards1">Uzvārds</h2>
+              <h2 id="vecums1">Dzimšanas dati</h2>
+              <h2 id="dzimums1">Dzimums</h2>
+              <h2 id="tautiba1">Tautība</h2>
+              <form action="/izvele" method="POST" id="form">
+                <input class="input" type="text" name="vards" id="vards" maxlength="50" required/>
+                <input class="input" type="text" name="uzvards" id="uzvards" maxlength="50" required/>
+                <input class="input" type="date" min="date" name="vecums" id="vecums" required>
+                <select class="input" name="dzimums" id="dzimums" required>
+                  <option>Sieviete</option>
+                  <option>Vīrietis</option>
+                </select>
+                <input class="input" type="text" name="tautiba" id="tautiba" maxlength="50" required/>
+                <input type="submit" value="Rezervēt" id="rezervet">
+              </form>
+            </div>
+
+            
     <div class="footer">
         <div class="more">
             <div>
