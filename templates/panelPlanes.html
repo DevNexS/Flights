@@ -56,7 +56,7 @@
             <!--== USER INFO ==-->
             <div class="sb2-12">
                 <ul>
-                    <li><img src="images/icons/account_logo.jpeg" alt="">
+                    <li><img src="/static/icons/account_logo.jpeg" alt="">
                     </li>
                     <li>
                         <h5>{{ name }} <span> Riga, LV</span></h5>
@@ -69,7 +69,7 @@
                 <ul class="collapsible" data-collapsible="accordion">
                     <li><a href="/panel.html" class="collapsible-header"><i class="fa fa-bar-chart" aria-hidden="true"></i> Панель</a>
                     </li>
-                    <li><a href="/panelPlanes.html" class="collapsible-header"><i class="fa fa-umbrella" aria-hidden="true"></i> Рейсы</a>
+                    <li><a href="/panelPlanes.html" class="menu-active"><i class="fa fa-umbrella" aria-hidden="true"></i> Рейсы</a>
                         <div class="collapsible-body left-sub-menu">
                         </div>
                     </li>
@@ -145,38 +145,22 @@
                                 <div class="table-responsive table-desi">
                                         <table>
                                             <tr>
-                                                <th>Ник</th>
-                                                <th>Модель</th>
-                                                <th>Год создания</th>
-                                                <th>Кол.-во мест</th>
-                                                <th>Число</th>
+                                                <th>Откуда</th>
+                                                <th>Куда</th>
                                                 <th>Действие</th>
                                             </tr>
-                                            {% for task in tasks %}
+                                            {% for reis in reisi %}
                                                 <tr>
-                                                    <td>{{ task.content }}</td>
-                                                    <td>{{ task.modelis }}</td>
-                                                    <td>{{ task.razosanas_gads }}</td>
-                                                    <td>{{ task.vietu_skaits }}</td>
-                                                    <td>{{ task.date_created.date() }}</td>
+                                                    <td>{{ reis.nokuriene }}</td>
+                                                    <td>{{ reis.wheretogo }}</td>
                                                     <td>
-                                                        <a class ="label udalit" href="/delete/{{task.id}}">Delete</a>
+                                                        <a class ="label udalit" href="/delete/{{reis.id}}">Удалить</a>
                                                         <br>
-                                                        <a href="/update/{{task.id}}">Update</a>
+                                                        <a href="{{url_for('download_file')}}">Скачать</a>
                                                     </td>
                                                 </tr>
                                             {% endfor %}
                                         </table>
-                                        <div class="form">
-                                            <form class=".app-search input" action="/panelPlanes.html" method="POST">
-                                                <input type="text" name="content" class="input1" id="content" required>
-                                                <input type="text" name="modelis" class="input1" id="modelis" required>
-                                                <input type="text" name="razosanas_gads" class="input1" id="razosanas_gads" required>
-                                                <input type="text" name="vietu_skaits" class="input1" id="vietu_skaits" required>
-                                                <input type="text" name="date_created.date()" class="input1" id="date_created.date()" required>
-                                                <span class="label"><input type="submit" class="dobavit"  value="Добавить"></span>
-                                            </form>
-                                        </div>
                                 </div>
                             </div>
                         </div>

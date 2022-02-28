@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session, send_file
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm 
@@ -7,7 +7,7 @@ from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import InputRequired, Email, Length
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
-from flask_admin import Admin
+from flask_admin import Admin, AdminIndexView
 from flask_admin.contrib.sqla import ModelView
 
 app = Flask(__name__)
@@ -41,10 +41,10 @@ def register():
         db.session.add(new_user)
         db.session.commit()
 
-        return '<h1>New user has been created!</h2>'
+        return redirect(url_for('index'))
         #return '<h1>' + form.username.data + ' ' + form.email.data + ' ' + form.password.data + '</h1>'
         
-    return render_template("register.html", form=form)
+    return render_template("/register.html", form=form)
 
 class LoginForm(FlaskForm):
     username = StringField('username', validators=[InputRequired(),Length(min=4, max=15)])
@@ -57,7 +57,6 @@ class RegisterForm(FlaskForm):
     password = StringField('password', validators=[InputRequired(), Length(min=6, max=80)])
 
 @app.route('/', methods=['GET', 'POST'])
-@app.route('/', methods=['GET', 'POST'])
 def index():
     form = LoginForm()
     
@@ -68,12 +67,12 @@ def index():
                 login_user(user, remember=form.remember.data)
                 return redirect(url_for('panel'))
 
-        return '<h1>Invalid username or password</h1>' 
+        return '<h1>Invalid username or password</h1>'
         # return '<h1>' + form.username.data + ' ' + form.password.data + '</h1>'
     
     if request.method == 'POST':
         lidosta = Lidosta(content=request.form['content'])
-        new_rezervacija = Rezervacija(nolidostas=request.form['nokuriene'],uzlidostas=request.form['wheretogo'], datepick=request.form['datepick'])
+        new_rezervacija = Rezervacija(nokuriene=request.form['nokuriene'],wheretogo=request.form['wheretogo'], datepick=request.form['datepick'])
         try:
             db.session.add(lidosta)
             db.session.add(new_rezervacija)
@@ -84,17 +83,15 @@ def index():
     else:
         lidostas = Lidosta.query.order_by(Lidosta.date_created).all()
         tasks = Rezervacija.query.order_by(Rezervacija.id).all()
-        
+    
+    # if request.method == 'POST':
     return render_template('index.html', lidostas=lidostas, form=form, tasks=tasks)
 
 class Reis(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    datums = db.Column(db.String(200), nullable=False)
-    laiks = db.Column(db.String(200), nullable=False)
     nokuriene = db.Column(db.String(200), nullable=False)
     wheretogo = db.Column(db.String(200), nullable=False)
-    date_created = db.Column(db.DateTime, default=datetime.utcnow)
-
+    datepick = db.Column(db.DateTime, default=datetime.utcnow)
     def __repr__(self):
         return 'Reis %r' % self.id
 
@@ -131,20 +128,21 @@ class Lidmasina(db.Model):
 @app.route('/panelPlanes.html', methods=['POST', 'GET'])
 def lidmasina():
     if request.method == 'POST':
-      new_lidmasina = Lidmasina(content=request.form['content'],modelis=request.form['modelis'], razosanas_gads=request.form['razosanas_gads'], vietu_skaits=request.form['vietu_skaits'])
+    #   new_lidmasina = Lidmasina(content=request.form['content'],modelis=request.form['modelis'], razosanas_gads=request.form['razosanas_gads'], vietu_skaits=request.form['vietu_skaits'])
       try:
-        db.session.add(new_lidmasina)
+        # db.session.add(new_lidmasina)
         db.session.commit()
         return redirect('/panelPlanes.html')
       except:
         return "error"
     else:
-      tasks = Lidmasina.query.order_by(Lidmasina.date_created).all()
-      return render_template('/panelPlanes.html', tasks=tasks, name=current_user.username)
+      reis = Reis.query.order_by(Reis.nokuriene).all()
+    #   tasks = Lidmasina.query.order_by(Lidmasina.date_created).all()
+      return render_template('/panelPlanes.html', reisi=reis, name=current_user.username)
 
 @app.route('/delete/<int:id>')
 def delete_plane(id):
-    task_to_delete = Lidmasina.query.get_or_404(id)
+    task_to_delete = Reis.query.get_or_404(id)
     try:
         db.session.delete(task_to_delete)
         db.session.commit()
@@ -154,7 +152,7 @@ def delete_plane(id):
 
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
-    task = Lidmasina.query.get_or_404(id)
+    task = Reis.query.get_or_404(id)
 
     if request.method == 'POST':
         task.content = request.form['content']
@@ -171,10 +169,10 @@ def update(id):
     else:
         return render_template('panelPlanesUpdate.html', task=task)
 
-@app.route('/secondlpp.html')
+@app.route('/secondlpp.html', methods=["POST", "GET"])
 def secondlpp():
     if request.method == 'POST':
-        new_reis = Reis(datums=request.form['datums'], laiks=request.form['laiks'], nokuriene=request.form['nokuriene'], wheretogo=request.form['wheretogo'])
+        new_reis = Reis(nokuriene=request.form['nokuriene'], wheretogo=request.form['wheretogo'])
         try:
             db.session.add(new_reis)
             db.session.commit()
@@ -182,8 +180,9 @@ def secondlpp():
         except:
             return "error"
     else:
-        tasks = Reis.query.order_by(Reis.date_created).all()
-    return render_template("secondlpp.html")
+        reis = Reis.query.order_by(Reis.nokuriene).all()
+    return render_template("secondlpp.html", reisi=reis)
+
 
 @app.route('/reservation.html')
 def reservation():
@@ -225,17 +224,20 @@ def reference():
 def settings():
     return render_template("footerPages/settings.html")
 
+@login_required
+def logout():
+    return redirect(url_for('index'))
+
 @app.route('/panel.html')
 @login_required
 def panel():
     return render_template("panel.html", name=current_user.username, email=current_user.email)
 
-@app.route('/logout')
-@login_required
-def logout():
-    logout_user()
-    return redirect(url_for('index'))
-
+@app.route('/download')
+def download_file():
+    p = "test.db"
+    return send_file(p, as_attachment=True)
+    
 @app.route('/panelPlanes.html')
 def panelPlanes():
     return render_template("panelPlanes.html")
@@ -280,10 +282,14 @@ class MyModelView(ModelView):
     def is_accessible(self):
         return current_user.is_authenticated
 
-    def is_inaccessible(self, name, **kwargs):
-        return redirect(url_for('panel'))
+    def is_inaccessible_callback(self, name, **kwargs):
+        return redirect(url_for('index'))
 
-admin = Admin(app)
+class MyAdminIndexView(AdminIndexView):
+    def is_accessible(self):
+        return current_user.is_authenticated
+
+admin = Admin(app, index_view=MyAdminIndexView())
 admin.add_view(MyModelView(User, db.session))
 admin.add_view(MyModelView(Lidmasina, db.session))
 admin.add_view(MyModelView(Lidosta, db.session))
@@ -293,7 +299,12 @@ admin.add_view(MyModelView(Reis, db.session))
 def login():
     user = User.query.get(1)
     login_user(user)
-    return 'Logged in!'
+    return redirect(url_for('admin.index'))
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)

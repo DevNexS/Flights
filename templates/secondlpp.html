@@ -25,32 +25,27 @@
             <span class="aviabutton">Авиабилеты</span>
         </a>
     </div>
-
-
-    <!-- <div class="menu">
-        <p class="flightArea">Латвия (LV) - Испания(S)</p>
-        <p class="ticketForm">1 взрослый | Эконом</p>
-    </div>
-    <div class="line"></div> -->
+    <form action="/second.lpp" method="POST">
             <div class="fons">
                 <span id="reisaNumursTeksts" class="reisaNumurs">Reisa numurs:</span>
                 <span id="reisaNumurs" class="reisaNumurs">FR1976</span>
-                {% for rezervacija in rezervacija %}
-                <h id="dati" class="infoBilete">
-                  <option value="{{rezervacija.nokuriene}}">{{ rezervacija.nokuriene }}</option>
-                </h>
-                <h id="ielidosanasPilseta" class="infoBilete">
-                  <option value="{{rezervacija.wheretogo}}">{{ rezervacija.wheretogo }}</option>
-                </h>
-                 <h id="atiesanasDatums" class="infoBilete">
-                  <option value="{{rezervacija.datepick}}">{{ rezervacija.datepick }}</option>
-                </h>
+                {% for reis in reisi %}
+
+                    <h value="{{ reis.nokuriene }}" id="dati" class="infoBilete">
+                    <option>{{ reis.nokuriene }}</option>
+                    </h>
+                    <h value="{{ reis.wheretogo }}" id="ielidosanasPilseta" class="infoBilete">
+                    <option>{{ reis.wheretogo }}</option>
+                    </h>
+
                 {% endfor %}
                 <span id="ilgums">Ilgums 1h 50min</span>
                 <span id="atiesanasLaiks" class="infoBilete">19.55</span>
                 <span id="ielidosanasLaiks" class="infoBilete">22.00</span>
                 <span id="biletesCena" class="infoBilete"></span>
             </div>
+    </form>
+    <form action="/panel.html" method="POST">
             <div class="pasazieris">
               <h1 class="miniVirsraksts">Pasažieris</h1>
               <h2 id="vards1">Vārds</h2>
@@ -70,8 +65,7 @@
                 <input type="submit" value="Rezervēt" id="rezervet">
               </form>
             </div>
-
-
+    </form>
     <div class="footer">
         <div class="more">
             <div>
