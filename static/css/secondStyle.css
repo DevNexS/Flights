@@ -462,10 +462,12 @@ a {
   width: 400px;
   height: 42.19px;
   background: #ffffff;
+  display: flex;
 }
 
 #ielidosanasPilseta {
   position: absolute;
+  display: flex;
   left: 63.3%;
   top: 56%;
   width: 400px;
