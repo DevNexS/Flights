@@ -562,7 +562,24 @@ background-color: #FFFAF0;
     width: 80%;
     height: 40px;
     cursor: pointer;
-    display: block;
+    display: flex;
+    text-align: center;
+    text-decoration: none;
+    margin: auto;
+    background: #f1c933;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    user-select: none;
+  }
+  .submit-btn.vniz {
+    width: 80%;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 40px;
     margin: auto;
     background: #f1c933;
     border: none;

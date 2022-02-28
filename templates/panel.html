@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Quicksand:300,400,500" rel="stylesheet">
 
     <!-- FONT-AWESOME ICON CSS -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+
     <script src="https://kit.fontawesome.com/2a9941146c.js" crossorigin="anonymous"></script>
 
     <!--== ALL CSS FILES ==-->
@@ -21,8 +21,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap1.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize1.css') }}" />
 
-    <script src="js/some.js"></script>
-    <script src="js/some.min.js"></script>
 </head>
 
 <body>
@@ -31,7 +29,7 @@
     <div class="row">
         <!--== LOGO ==-->
         <div class="col-md-2 col-sm-3 col-xs-6 sb1-1">
-            <a href="panel.html" class="logo"><img src="images/logo1.png" alt="" />
+            <a href="panel.html" class="logo"><img src="" alt="" />
             </a>
         </div>
         <!--== SEARCH ==-->
@@ -56,7 +54,7 @@
             <!--== USER INFO ==-->
             <div class="sb2-12">
                 <ul>
-                    <li><img src="images/icons/account_logo.jpeg" alt="">
+                    <li><img src="/static/icons/account_logo.jpeg" alt="">
                     </li>
                     <li>
                         <h5>{{ name }} <span> Riga, LV</span></h5>
@@ -186,10 +184,6 @@
 </div>
 
 <!--======== SCRIPT FILES =========-->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/materialize.min.js"></script>
-<script src="js/custom.js"></script>
 </body>
 
 </html>

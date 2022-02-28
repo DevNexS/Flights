@@ -180,8 +180,8 @@ def secondlpp():
         except:
             return "error"
     else:
-        reis = Reis.query.order_by(Reis.nokuriene).all()
-    return render_template("secondlpp.html", reisi=reis)
+        reis = Reis.query.order_by(Reis.id).all()
+        return render_template("secondlpp.html", reisi=reis)
 
 
 @app.route('/reservation.html')

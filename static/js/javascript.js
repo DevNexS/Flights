@@ -1,11 +1,11 @@
 //меняет местами значения input-ов
 document.getElementById("switch").onclick = function (){
     [
-      document.getElementById("elastic").value,
+      document.getElementById("nokuriene").value,
       document.getElementById("wheretogo").value
     ] = [
       document.getElementById("wheretogo").value,
-      document.getElementById("elastic").value
+      document.getElementById("nokuriene").value
     ];
 };
 
